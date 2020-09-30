@@ -1,0 +1,90 @@
+.navbar, .navbar-custom { 
+    filter:none !important; 
+}
+
+.logout {
+    float: right !important;
+    margin-top:0px;
+}
+
+.caret {
+  position: relative;
+}
+
+.navbar-custom {
+  font-size: 0.8em;
+}
+
+.nav-tabs {
+  border-bottom: transparent;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: transparent;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-pane {
+    border: transparent;
+  /*border-bottom: 1px solid #a4c402;
+  border-left: 1px solid #a4c402;
+  border-right: 1px solid #a4c402;*/
+}
+
+.listaDocs td{ 
+        padding:7px; 
+        border:transparent;
+        border-top: none;
+}
+
+/*
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus,
+.close,
+.close:hover,
+.close:focus,
+.btn,
+.btn.disabled,
+.btn[disabled],
+.btn-primary,
+.btn-warning,
+.btn-danger,
+.btn-success,
+.btn-info,
+.btn-inverse,
+.nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret,
+.nav li.dropdown.open a:focus .caret,
+.navbar-inner,
+.navbar .btn-navbar,
+.navbar-inverse .navbar-inner,
+.navbar-inverse .btn-navbar,
+.modal-backdrop,
+.modal-backdrop.fade.in,
+.tooltip,
+.tooltip.in,
+.progress,
+.progress .bar,
+.progress-danger .bar,
+.progress .bar-danger,
+.progress-success .bar,
+.progress .bar-success,
+.progress-info .bar,
+.progress .bar-info,
+.progress-warning .bar,
+.progress .bar-warning,
+.carousel-control,
+.carousel-control:hover,
+.carousel-control:focus{
+    filter:none !important;
+}*/

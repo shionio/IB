@@ -1,0 +1,1756 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF985EAA-CF34-43B6-9795-ABC4EC9AF477}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBBAV</RootNamespace>
+    <AssemblyName>IBBAV</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBBAVJ.XmlSerializers">
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\DESA_IBBAVJ_3.0\IBBAVJReferences\IBBAVJ.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\DESA_IBBAVJ_3.0\IBBAVJReferences\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\DESA_IBBAVJ_3.0\IBBAVJReferences\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\DESA_IBBAVJ_3.0\IBBAVJReferences\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\DESA_IBBAVJ_3.0\IBBAVJReferences\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.IPNetwork, Version=2.1.3.0, Culture=neutral, PublicKeyToken=717343cc2c25edcf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\lguerra\source\repos\ipnetwork-master\src\System.Net.IPNetwork\bin\Debug\net40\System.Net.IPNetwork.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="bootstrap-table\bootstrap-table.min.js.map" />
+    <None Include="Connected Services\WSTedexis\configuration91.svcinfo" />
+    <None Include="Connected Services\WSTedexis\configuration.svcinfo" />
+    <None Include="Connected Services\WSTedexis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="fonts\main\MyriadWebPro.eot" />
+    <Content Include="fonts\main\MyriadWebPro.otf" />
+    <Content Include="fonts\main\MyriadWebPro.svg" />
+    <Content Include="fonts\main\MyriadWebPro.ttf" />
+    <Content Include="fonts\main\MyriadWebPro.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-regular.eot" />
+    <Content Include="fonts\glyphicons-regular.svg" />
+    <Content Include="fonts\glyphicons-regular.ttf" />
+    <Content Include="fonts\glyphicons-regular.woff" />
+    <Content Include="fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="fonts\icons.eot" />
+    <Content Include="fonts\icons.svg" />
+    <Content Include="fonts\icons.ttf" />
+    <Content Include="fonts\icons.woff" />
+    <Content Include="fonts\MyriadPro-Black.otf" />
+    <Content Include="fonts\MyriadPro-BlackIt.otf" />
+    <Content Include="fonts\MyriadPro-Bold.otf" />
+    <Content Include="fonts\MyriadPro-BoldCond.otf" />
+    <Content Include="fonts\MyriadPro-BoldCondIt.otf" />
+    <Content Include="fonts\MyriadPro-BoldIt.otf" />
+    <Content Include="fonts\MyriadPro-Cond.otf" />
+    <Content Include="fonts\MyriadPro-CondIt.otf" />
+    <Content Include="fonts\MyriadPro-It.otf" />
+    <Content Include="fonts\MyriadPro-Light.otf" />
+    <Content Include="fonts\MyriadPro-LightIt.otf" />
+    <Content Include="fonts\MyriadPro-Regular.otf" />
+    <Content Include="fonts\MyriadPro-Semibold.otf" />
+    <Content Include="fonts\MyriadPro-SemiboldIt.otf" />
+    <Content Include="fonts\MyriadStd-Sketch.otf" />
+    <Content Include="fonts\MyriadStd-Tilt.otf" />
+    <Content Include="fonts\MyriadWebPro-Bold.ttf" />
+    <Content Include="fonts\MyriadWebPro-Italic.ttf" />
+    <Content Include="fonts\MyriadWebPro.ttf" />
+    <Content Include="images\fav\Thumbs.db" />
+    <Content Include="images\Thumbs.db" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.min.js.map" />
+    <Content Include="js\vendor\twitter-bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="js\vendor\twitter-bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\vendor\twitter-bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="js\vendor\twitter-bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="js\vendor\twitter-bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8.nupkg" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net45\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net45\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net46\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net46\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\tools\net45\install.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\tools\net45\uninstall.ps1" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csc.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csc.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csi.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csi.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\vbc.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\vbc.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\VBCSCompiler.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\Microsoft.Net.Compilers.2.6.1.nupkg" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\ThirdPartyNotices.rtf" />
+    <Content Include="pages\BAVMaster.Master" />
+    <Content Include="pages\BAVMasterSimple.master" />
+    <Content Include="condiciones.pdf" />
+    <Content Include="pages\Extraefectivo\ContratoExtraEfect.aspx" />
+    <Content Include="pages\Extraefectivo\pdf\ReciboExtraEfect.aspx" />
+    <Content Include="pages\Extraefectivo\SolicitudExtraEfect.aspx" />
+    <Content Include="pages\ExtraTDC\EnBAV.aspx" />
+    <Content Include="pages\NotificacionViajes\DestinoNuevo.aspx" />
+    <Content Include="pages\NotificacionViajes\NotificacionNueva.aspx" />
+    <Content Include="pages\NotificacionViajes\DetalleNotificacion.aspx" />
+    <Content Include="pages\ExtraTDC\ContratoExtraEfect.aspx" />
+    <Content Include="Thumbs.db" />
+    <None Include="Connected Services\WSTedexis\M4WSIntSR.wsdl" />
+    <None Include="Web References\WsAfiliados\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsAfiliados\WsAfiliados.wsdl" />
+    <None Include="Web References\WsErrores\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsErrores\WsErrores.disco" />
+    <None Include="Web References\WsExtraefectivo\ExtraCredito.wsdl" />
+    <None Include="Web References\WsAfiliados\WsAfiliados.disco" />
+    <None Include="Web References\WsExtraefectivo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\WsExtraefectivo\Solicitud.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsExtraefectivo\Tarjeta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WsFavoritos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsErrores\WsErrores.wsdl" />
+    <None Include="Web References\WsFavoritos\WsFavoritos.disco" />
+    <None Include="Web References\WsGlobal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsFavoritos\WsFavoritos.wsdl" />
+    <None Include="Web References\WsGlobal\WsGlobal.disco" />
+    <None Include="Web References\WsLogons\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsGlobal\WsGlobal.wsdl" />
+    <None Include="Web References\WsLogons\WsLogons.disco" />
+    <None Include="Web References\WsMensajeria\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\WsMensajeria\ResultMSG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WsMensajeria\Service.wsdl" />
+    <None Include="Web References\WsMenu\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsLogons\WsLogons.wsdl" />
+    <None Include="Web References\WsMenu\WsMenu.disco" />
+    <None Include="Web References\WsNotif_IBP\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsNotif_IBP\WsNotif_IBP.wsdl" />
+    <None Include="Web References\WsServicios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsMenu\WsMenu.wsdl" />
+    <None Include="Web References\WsServicios\WsServicios.disco" />
+    <None Include="Web References\WsSession\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsServicios\WsServicios.wsdl" />
+    <None Include="Web References\WsNotif_IBP\WsNotif_IBP.disco" />
+    <Content Include="Web References\WsSession\SessionAfiliado.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WsSession\WsSession.disco" />
+    <None Include="Web References\WSTedexis\M4WSIntSR.wsdl" />
+    <Content Include="Web References\WSTedexis\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\WsTransaccion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsSession\WsSession.wsdl" />
+    <None Include="Web References\WsTransaccion\WsTransaccion.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="accordion\css\bs_leftnavi.css" />
+    <Content Include="accordion\index.html" />
+    <Content Include="accordion\js\bs_leftnavi.js" />
+    <Content Include="accordion\lib\jquery\jquery-2.1.1.min.js" />
+    <Content Include="bav.png" />
+    <Content Include="bavenlinea.jpeg" />
+    <Content Include="bootstrap-table\bootstrap-table.js" />
+    <Content Include="bootstrap-table\bootstrap-table.min.css" />
+    <Content Include="bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="bootstrap-table\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="bootstrap-table\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="bootstrap-table\extensions\filter\bootstrap-table-filter.min.js" />
+    <Content Include="bootstrap-table\extensions\flatJSON\bootstrap-table-flatJSON.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-es-VE.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="bootstrap-table\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="bootstrap\css\bootstrap-theme.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\bootstrap.min2.css" />
+    <Content Include="bootstrap\css\OLD_bootstrap.css" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\npm.js" />
+    <Content Include="css\1main.aspx" />
+    <Content Include="css\bootstrap-ie7.css" />
+    <Content Include="css\bootstrap-ie7.min.css" />
+    <Content Include="css\customize.css" />
+    <Content Include="css\customize.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\glyphicons.css" />
+    <Content Include="css\glyphicons.min.css" />
+    <Content Include="css\glyphiconshalflings.min.css" />
+    <Content Include="css\ie.css" />
+    <Content Include="css\ie.min.css" />
+    <Content Include="css\IE8.css" />
+    <Content Include="css\IE8.min.css" />
+    <Content Include="css\IE9.css" />
+    <Content Include="css\IE9.min.css" />
+    <Content Include="css\jquery-bav-keyboard.css" />
+    <Content Include="css\jquery.reject.css" />
+    <Content Include="css\main.aspx" />
+    <Content Include="css\main.css" />
+    <Content Include="css\main.min.css" />
+    <Content Include="css\non-responsive.css" />
+    <Content Include="css\non-responsive.min.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\normalize.min.css" />
+    <Content Include="forcelogout.aspx" />
+    <Content Include="frame.aspx" />
+    <Content Include="iisstart.htm" />
+    <Content Include="iistart3.htm" />
+    <Content Include="images\arrobaico.png" />
+    <Content Include="images\bavenlineapersonanatural.png" />
+    <Content Include="images\Brief06.jpg" />
+    <Content Include="images\browser_chrome.gif" />
+    <Content Include="images\browser_firefox.gif" />
+    <Content Include="images\browser_msie.gif" />
+    <Content Include="images\browser_opera.gif" />
+    <Content Include="images\browser_safari.gif" />
+    <Content Include="images\Copia de sessionbav.png" />
+    <Content Include="images\fav\icon.png" />
+    <Content Include="images\firma.gif" />
+    <Content Include="images\gobbanner.png" />
+    <Content Include="images\header.png" />
+    <Content Include="images\header1.png" />
+    <Content Include="images\header_ib.png" />
+    <Content Include="images\infologin.png" />
+    <Content Include="images\key.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logobav2.png" />
+    <Content Include="images\logobav_edocta.jpg" />
+    <Content Include="images\message_not.png" />
+    <Content Include="images\msgsent.png" />
+    <Content Include="images\petro.png" />
+    <Content Include="images\PopUp.png" />
+    <Content Include="images\qicon.png" />
+    <Content Include="images\secureicon.png" />
+    <Content Include="images\sessionbav.png" />
+    <Content Include="images\telfico.png" />
+    <Content Include="images\white_list.png" />
+    <Content Include="js\accounting.min.js" />
+    <Content Include="js\bav\BAV.js" />
+    <Content Include="js\bav\Caching.js" />
+    <Content Include="js\bav\disable.js" />
+    <Content Include="js\bav\form-bav.js" />
+    <Content Include="js\bav\functions.js" />
+    <Content Include="js\bav\jquery.reject.js" />
+    <Content Include="js\bav\jquery.timers.js" />
+    <Content Include="js\bav\SessionBAV-BAK.js" />
+    <Content Include="js\bav\SessionBAV.js" />
+    <Content Include="js\bav\timesession.js" />
+    <Content Include="js\data.js" />
+    <Content Include="js\data.min.js" />
+    <Content Include="js\enhance.js" />
+    <Content Include="js\enhance.min.js" />
+    <Content Include="js\forms.js" />
+    <Content Include="js\forms.min.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\html5.min.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\ie.js" />
+    <Content Include="js\ie.min.js" />
+    <Content Include="js\IE9.min.js" />
+    <Content Include="js\jquery-bav-keyboard.js" />
+    <Content Include="js\jquery-bav-keyboard.min.js" />
+    <Content Include="js\jquery-bav-keyboard_04092017.js" />
+    <Content Include="js\jquery-print.js" />
+    <Content Include="js\jquery.alphanum.js" />
+    <Content Include="js\jQuery.fileinput.js" />
+    <Content Include="js\jQuery.fileinput.min.js" />
+    <Content Include="js\json3.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\metismenu.js" />
+    <Content Include="js\metismenu.min.js" />
+    <Content Include="js\moment.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="js\prefixfree-1.0.7.js" />
+    <Content Include="js\resource.js" />
+    <Content Include="js\respond.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="js\responsive-tabs.js" />
+    <Content Include="js\responsive-tabs.min.js" />
+    <Content Include="js\sha512.js" />
+    <Content Include="js\sha512.min.js" />
+    <Content Include="js\tooltipsy.min.js" />
+    <Content Include="js\vendor\jquery-1.11.0.js" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\external\jquery\jquery.js" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\index.html" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.js" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.min.js" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.structure.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.structure.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\jquery-ui.theme.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_diagonals-thick_8_333333_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_glass_40_111111_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_glass_55_1c1c1c_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_highlight-hard_100_f9f9f9_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_highlight-hard_40_aaaaaa_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_highlight-soft_50_aaaaaa_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_inset-hard_45_cd0a0a_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-bg_inset-hard_55_ffeb80_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_4ca300_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_ededed_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_ffcf29_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\black-tie\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-icons_004276_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\blitzer\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\cupertino\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_highlight-hard_20_0972a5_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_highlight-soft_33_003147_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_highlight-soft_35_222222_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_highlight-soft_44_444444_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-bg_loop_25_000000_21x21.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-icons_a83300_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dark-hive\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_diagonals-thick_15_0b3e6f_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_dots-medium_30_0b58a2_4x4.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_dots-small_20_333333_2x2.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_dots-small_30_a32d00_2x2.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_dots-small_40_00498f_2x2.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_flat_40_292929_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-bg_gloss-wave_20_111111_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-icons_00498f_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-icons_98d2fb_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-icons_9ccdfc_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\dot-luv\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_flat_55_994d53_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_flat_55_fafafa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_gloss-wave_30_3d3644_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_highlight-soft_100_dcd9de_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_highlight-soft_100_eae6ea_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_highlight-soft_25_30273a_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-bg_highlight-soft_45_5f5964_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_734d99_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_8d78a5_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_a8a3ae_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_ebccce_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\eggplant\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_diagonals-thick_20_e69700_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_diagonals-thick_22_1484e6_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_diagonals-thick_26_2293f7_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_flat_0_e69700_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_flat_0_e6b900_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-bg_inset-hard_100_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-icons_0a82eb_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-icons_0b54d5_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-icons_5fa5e3_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-icons_fcdd4a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\excite-bike\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\flick\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_diagonals-small_75_ccd232_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_dots-medium_80_ffff38_4x4.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_dots-small_35_35414f_2x2.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_flat_75_ba9217_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-bg_white-lines_85_f7f7ba_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_88a206_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_c02669_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_e1e463_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\hot-sneaks\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_glass_100_f5f0e5_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_glass_25_cb842e_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_glass_70_ede4d4_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_highlight-hard_100_f4f0ec_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_highlight-hard_75_f5f5b5_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-bg_inset-soft_100_f4f0ec_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_c47a23_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_cb672b_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_f08000_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_f35f07_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\humanity\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_diagonals-thick_15_444444_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_glass_55_fbf5d0_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_highlight-hard_30_285c00_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_highlight-soft_33_3a8104_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_highlight-soft_50_4eb305_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-bg_inset-soft_10_285c00_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-icons_4eb305_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-icons_72b42d_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\le-frog\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_glass_15_5f391b_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_gloss-wave_20_1c160d_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_gloss-wave_25_453326_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_gloss-wave_30_44372c_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_highlight-soft_20_201913_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_highlight-soft_20_619226_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-bg_inset-soft_10_201913_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_9bcc60_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_add978_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_e3ddc9_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_f1fd86_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\mint-choc\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-icons_999999_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\overcast\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_diagonal-maze_20_6e4f1c_10x10.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_diagonal-maze_40_000000_10x10.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_10_eceadf_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_10_f8f7f6_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_15_eceadf_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_15_f7f3de_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_15_ffffff_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_65_654b24_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-bg_fine-grain_68_b83400_60x60.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_3572ac_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_8c291d_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_b83400_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_fbdb93_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\pepper-grinder\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\redmond\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\smoothness\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_8DC262_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\south-street\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\start\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_diagonals-medium_20_d34d17_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_gloss-wave_45_817865_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_gloss-wave_60_fece2f_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_gloss-wave_70_ffdd57_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_gloss-wave_90_fff9e5_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_highlight-soft_100_feeebd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-bg_inset-soft_30_ffffff_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_3d3d3d_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_bd7b00_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_d19405_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_eb990f_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_ed9f26_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_fadc7a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\images\ui-icons_ffe180_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\sunny\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_10_4f4221_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_20_372806_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_25_675423_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_25_d5ac5d_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_8_261803_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_diamond_8_443113_10x8.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_flat_75_ddd4b0_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_070603_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_e8e2b5_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_e9cd86_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_efec9f_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_f2ec64_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_f9f2bd_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\swanky-purse\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_diagonals-small_50_262626_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_flat_0_303030_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_flat_0_4c4c4c_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_glass_40_0a0a0a_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_glass_55_f1fbe5_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_glass_60_000000_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_gloss-wave_55_000000_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_gloss-wave_85_9fda58_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-bg_gloss-wave_95_f6ecd5_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_000000_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_1f1f1f_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_9fda58_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_b8ec79_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\trontastic\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-icons_a83300_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-darkness\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\ui-lightness\theme.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_gloss-wave_16_121212_500x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_highlight-hard_15_888888_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_highlight-hard_55_555555_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_highlight-soft_35_adadad_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_highlight-soft_60_dddddd_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-bg_inset-soft_15_121212_1x100.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_666666_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_aaaaaa_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_c98000_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\images\ui-icons_f29a00_256x240.png" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\jquery-ui.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\jquery-ui.min.css" />
+    <Content Include="js\vendor\jquery-ui-1.11.1\themes\vader\theme.css" />
+    <Content Include="js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="js\vendor\twitter-bootstrap\css\bootstrap-theme.css" />
+    <Content Include="js\vendor\twitter-bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="js\vendor\twitter-bootstrap\css\bootstrap.css" />
+    <Content Include="js\vendor\twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="js\vendor\twitter-bootstrap\css\OLD_bootstrap-theme.css" />
+    <Content Include="js\vendor\twitter-bootstrap\js\bootstrap.js" />
+    <Content Include="js\vendor\twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="List.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csc.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\csi.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\Microsoft.Win32.Primitives.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.AppContext.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Console.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Diagnostics.Process.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Diagnostics.StackTrace.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.IO.Compression.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.IO.FileSystem.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.IO.Pipes.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.AccessControl.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Claims.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Security.Principal.Windows.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Text.Encoding.CodePages.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Threading.Thread.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.ValueTuple.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Xml.ReaderWriter.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Xml.XmlDocument.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Xml.XPath.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\System.Xml.XPath.XDocument.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\vbc.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.2.6.1\tools\VBCSCompiler.exe" />
+    <Content Include="pages\Confirmacion.aspx" />
+    <Content Include="pages\consolidada.aspx" />
+    <Content Include="pages\Consultas\Chequeras\ConsultaChequera.aspx" />
+    <Content Include="pages\Consultas\Cuentas\EstadoCuenta.aspx" />
+    <Content Include="pages\Consultas\Cuentas\Movimientos.aspx" />
+    <Content Include="pages\IB\AfiliacionIB\GetNewUser.aspx" />
+    <Content Include="pages\IB\AfiliacionIB\NewUser.aspx" />
+    <Content Include="pages\IB\AfiliacionIB\terms_conditions.aspx" />
+    <Content Include="pages\IB\Claves\ActualizarDatos.aspx" />
+    <Content Include="pages\IB\Claves\CaducoClave.aspx" />
+    <Content Include="pages\IB\Claves\CambioClave.aspx" />
+    <Content Include="pages\IB\Claves\RecuperarClave.aspx" />
+    <Content Include="pages\IB\Favoritos\DatosFavorito.aspx" />
+    <Content Include="pages\IB\Favoritos\MenuFavoritos.aspx" />
+    <Content Include="pages\IB\P2P\AfilModif.aspx" />
+    <Content Include="pages\IB\P2P\Desafiliacion.aspx" />
+    <Content Include="pages\IB\P2P\Favoritos.aspx" />
+    <Content Include="pages\IB\Preguntas\MenuPreguntas.aspx" />
+    <Content Include="pages\Pagos\Servicios\Hidrocapital.aspx" />
+    <Content Include="pages\Pagos\Tarjetas\EnBAV.aspx" />
+    <Content Include="pages\Pagos\Tarjetas\OtrosBancos.aspx" />
+    <Content Include="pages\Servicios\Referencias\ReferenciaCuenta.aspx" />
+    <Content Include="pages\Servicios\Referencias\ReferenciaImpresion.aspx" />
+    <Content Include="pages\SessionOut.aspx" />
+    <Content Include="pages\Transferencias\EnBAV.aspx" />
+    <Content Include="pages\Transferencias\OtrosBancos.aspx" />
+    <Content Include="pagina-en-mantenimiento.jpg" />
+    <Content Include="Random.txt" />
+    <Content Include="sessionlogout.aspx" />
+    <Content Include="UserControls\Menu\BAVMenu.ascx" />
+    <Content Include="UserControls\PreguntasDesafio.ascx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsIbsService\IbsService.wsdl" />
+    <None Include="Web References\WsIbsService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\WsIbsService\RespuestaAfiljudsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaAfilpedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaAvancedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaBlotdddsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaChequedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaCmesdidsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaCnlotedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaConempdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaConfavdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaConpagosjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaConsuldsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaContdcdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaDetchedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaDtlotedsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaIbaCons.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaIfcedoctadsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaIfcsuspchqdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaInextdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaIntrfdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaReferbdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaStmrdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaValctadsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaValfavdsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaValusudsjv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaWsfBLQdrbs.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WsIbsService\RespuestaWsfCtedrcc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WsTransaccion\WsTransaccion.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ws\Data.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cMD5.cs" />
+    <Compile Include="Connected Services\WSTedexis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="css\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Afiliado.cs" />
+    <Compile Include="Entidades\AfiliadoFavorito.cs" />
+    <Compile Include="Entidades\Agencia.cs" />
+    <Compile Include="Entidades\Banco.cs" />
+    <Compile Include="Entidades\BAVMenuOpcion.cs" />
+    <Compile Include="Entidades\Extraefectivo\TarjetaConsulta.cs" />
+    <Compile Include="Entidades\Extraefectivo\LineaExtracredito.cs" />
+    <Compile Include="Entidades\Notificaciones\IP_Nacional.cs" />
+    <Compile Include="Entidades\RangoIP.cs" />
+    <Compile Include="Entidades\Contactos.cs" />
+    <Compile Include="Entidades\Correo.cs" />
+    <Compile Include="Entidades\DataLog.cs" />
+    <Compile Include="Entidades\DatosCorreo.cs" />
+    <Compile Include="Entidades\EntidadBase.cs" />
+    <Compile Include="Entidades\IBS\CuentaIBS.cs" />
+    <Compile Include="Entidades\Notificaciones\Notificacion.cs" />
+    <Compile Include="Entidades\Notificaciones\Paises.cs" />
+    <Compile Include="Entidades\Notificaciones\ValidacionesViaje.cs" />
+    <Compile Include="Entidades\Notificaciones\ValidaRangoIP.cs" />
+    <Compile Include="Entidades\Notificaciones\VerificaNotificacion.cs" />
+    <Compile Include="Entidades\Pregunta.cs" />
+    <Compile Include="Entidades\PreguntaCampos.cs" />
+    <Compile Include="Entidades\Servicios.cs" />
+    <Compile Include="Entidades\SessionAfiliado.cs" />
+    <Compile Include="Entidades\TipoFavorito.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\EncabezadoTransaccion.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\EnumTransaccion.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GActualizarDatos.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GAddExtraEfectivo.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GAddNotificacion.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GAfiliacionFavorito.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GAvanceEfectivo.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GBase.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GBloqueoTD.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GPagoTC.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GReferenciaBancaria.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GSuspensionCheq.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\GTransferenciasPagos.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\IObjetoGenerico.cs" />
+    <Compile Include="Entidades\TransaccionGenerica\TipoTransaccionGenerica.cs" />
+    <Compile Include="Entidades\TransMaxMin.cs" />
+    <Compile Include="ErrorIBS.cs" />
+    <Compile Include="forcelogout.aspx.cs">
+      <DependentUpon>forcelogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forcelogout.aspx.designer.cs">
+      <DependentUpon>forcelogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frame.aspx.cs">
+      <DependentUpon>frame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frame.aspx.designer.cs">
+      <DependentUpon>frame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\Calendario.cs" />
+    <Compile Include="Functions\CryptoIBS.cs" />
+    <Compile Include="Functions\CryptoUtils.cs" />
+    <Compile Include="Functions\DateAndTime.cs" />
+    <Compile Include="Functions\DateInterval.cs" />
+    <Compile Include="Functions\DNSUtility.cs" />
+    <Compile Include="Functions\eFunctions.cs" />
+    <Compile Include="Functions\ExportUtils.cs" />
+    <Compile Include="Functions\FechasCalc.cs" />
+    <Compile Include="Functions\Formatos.cs" />
+    <Compile Include="Functions\IBBAVConfiguration.cs" />
+    <Compile Include="Functions\KeyValueTrio_K, V1, V2_.cs" />
+    <Compile Include="Functions\MailManager.cs" />
+    <Compile Include="Functions\PoliticaUsuarioClave.cs" />
+    <Compile Include="Functions\STHashtable.cs" />
+    <Compile Include="Functions\UploadArchNomina.cs" />
+    <Compile Include="Functions\Utilities_T_.cs" />
+    <Compile Include="Functions\WebUtils.cs" />
+    <Compile Include="Helpers\HelperExtracredito.cs" />
+    <Compile Include="Helpers\UnidadCuenta.cs" />
+    <Compile Include="Helpers\ConsolidadaTipoConsulta.cs" />
+    <Compile Include="Helpers\ConsultaMovimientoTipoConsulta.cs" />
+    <Compile Include="Helpers\EnumAccionAddUpdateAfiliadoFavoritos.cs" />
+    <Compile Include="Helpers\EnumAccionChkIntentosLogin.cs" />
+    <Compile Include="Helpers\EnumRespuestaDesafio.cs" />
+    <Compile Include="Helpers\EnumTipoCodigo.cs" />
+    <Compile Include="Helpers\EnumTipoFavorito.cs" />
+    <Compile Include="Helpers\EnumTipoServicio.cs" />
+    <Compile Include="Helpers\EnumTipoValor.cs" />
+    <Compile Include="Helpers\HelperAfiliado.cs" />
+    <Compile Include="Helpers\HelperEnvioCorreo.cs" />
+    <Compile Include="Helpers\HelperErrores.cs" />
+    <Compile Include="Helpers\HelperFavorito.cs" />
+    <Compile Include="Helpers\HelperGlobal.cs" />
+    <Compile Include="Helpers\HelperHidrocapital.cs" />
+    <Compile Include="Helpers\HelperIbs.cs" />
+    <Compile Include="Helpers\HelperLogons.cs" />
+    <Compile Include="Helpers\HelperMensajeria.cs" />
+    <Compile Include="Helpers\HelperMenu.cs" />
+    <Compile Include="Helpers\HelperNotificacionIBP.cs" />
+    <Compile Include="Helpers\HelperPDF.cs" />
+    <Compile Include="Helpers\HelperRangoIP.cs" />
+    <Compile Include="Helpers\HelperServicios.cs" />
+    <Compile Include="Helpers\HelperSession.cs" />
+    <Compile Include="Helpers\HelperTedexis.cs" />
+    <Compile Include="Helpers\HelperTransaccion.cs" />
+    <Compile Include="Helpers\TipoClave.cs" />
+    <Compile Include="Helpers\TipoConsultaCuentasIBS.cs" />
+    <Compile Include="Helpers\TipoServicio.cs" />
+    <Compile Include="Helpers\TransferenciaTipoOperacion.cs" />
+    <Compile Include="Helpers\TransferenciaTipoVia.cs" />
+    <Compile Include="IBException.cs" />
+    <Compile Include="List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\BAVMaster.Master.cs">
+      <DependentUpon>BAVMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\BAVMaster.Master.designer.cs">
+      <DependentUpon>BAVMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="pages\BAVMasterSimple.master.cs">
+      <DependentUpon>BAVMasterSimple.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\BAVMasterSimple.master.designer.cs">
+      <DependentUpon>BAVMasterSimple.master</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Confirmacion.aspx.cs">
+      <DependentUpon>Confirmacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Confirmacion.aspx.designer.cs">
+      <DependentUpon>Confirmacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\consolidada.aspx.cs">
+      <DependentUpon>consolidada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\consolidada.aspx.designer.cs">
+      <DependentUpon>consolidada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Consultas\Chequeras\ConsultaChequera.aspx.cs">
+      <DependentUpon>ConsultaChequera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Consultas\Chequeras\ConsultaChequera.aspx.designer.cs">
+      <DependentUpon>ConsultaChequera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\EstadoCuenta.aspx.cs">
+      <DependentUpon>EstadoCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\EstadoCuenta.aspx.designer.cs">
+      <DependentUpon>EstadoCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\EstadoCuentaBusqueda.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\Movimientos.aspx.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\Movimientos.aspx.designer.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Consultas\Cuentas\MovimientosR.cs" />
+    <Compile Include="pages\Extraefectivo\ContratoExtraEfect.aspx.cs">
+      <DependentUpon>ContratoExtraEfect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Extraefectivo\ContratoExtraEfect.aspx.designer.cs">
+      <DependentUpon>ContratoExtraEfect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Extraefectivo\pdf\ReciboExtraEfect.aspx.cs">
+      <DependentUpon>ReciboExtraEfect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Extraefectivo\pdf\ReciboExtraEfect.aspx.designer.cs">
+      <DependentUpon>ReciboExtraEfect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Extraefectivo\SolicitudExtraEfect.aspx.cs">
+      <DependentUpon>SolicitudExtraEfect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Extraefectivo\SolicitudExtraEfect.aspx.designer.cs">
+      <DependentUpon>SolicitudExtraEfect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ExtraTDC\EnBAV.aspx.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ExtraTDC\EnBAV.aspx.designer.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\GetNewUser.aspx.cs">
+      <DependentUpon>GetNewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\GetNewUser.aspx.designer.cs">
+      <DependentUpon>GetNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\NewUser.aspx.cs">
+      <DependentUpon>NewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\NewUser.aspx.designer.cs">
+      <DependentUpon>NewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\terms_conditions.aspx.cs">
+      <DependentUpon>terms_conditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\AfiliacionIB\terms_conditions.aspx.designer.cs">
+      <DependentUpon>terms_conditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Claves\ActualizarDatos.aspx.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Claves\ActualizarDatos.aspx.designer.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Claves\CaducoClave.aspx.cs">
+      <DependentUpon>CaducoClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Claves\CaducoClave.aspx.designer.cs">
+      <DependentUpon>CaducoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Claves\CambioClave.aspx.cs">
+      <DependentUpon>CambioClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Claves\CambioClave.aspx.designer.cs">
+      <DependentUpon>CambioClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Claves\RecuperarClave.aspx.cs">
+      <DependentUpon>RecuperarClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Claves\RecuperarClave.aspx.designer.cs">
+      <DependentUpon>RecuperarClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Favoritos\DatosFavorito.aspx.cs">
+      <DependentUpon>DatosFavorito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Favoritos\DatosFavorito.aspx.designer.cs">
+      <DependentUpon>DatosFavorito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Favoritos\MenuFavoritos.aspx.cs">
+      <DependentUpon>MenuFavoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Favoritos\MenuFavoritos.aspx.designer.cs">
+      <DependentUpon>MenuFavoritos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\P2P\AfilModif.aspx.cs">
+      <DependentUpon>AfilModif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\P2P\AfilModif.aspx.designer.cs">
+      <DependentUpon>AfilModif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\P2P\Desafiliacion.aspx.cs">
+      <DependentUpon>Desafiliacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\P2P\Desafiliacion.aspx.designer.cs">
+      <DependentUpon>Desafiliacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\P2P\Favoritos.aspx.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\P2P\Favoritos.aspx.designer.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\IB\Preguntas\MenuPreguntas.aspx.cs">
+      <DependentUpon>MenuPreguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\IB\Preguntas\MenuPreguntas.aspx.designer.cs">
+      <DependentUpon>MenuPreguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\DestinoNuevo.aspx.cs">
+      <DependentUpon>DestinoNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\DestinoNuevo.aspx.designer.cs">
+      <DependentUpon>DestinoNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\NotificacionNueva.aspx.cs">
+      <DependentUpon>NotificacionNueva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\NotificacionNueva.aspx.designer.cs">
+      <DependentUpon>NotificacionNueva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\DetalleNotificacion.aspx.cs">
+      <DependentUpon>DetalleNotificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\NotificacionViajes\DetalleNotificacion.aspx.designer.cs">
+      <DependentUpon>DetalleNotificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Pagos\Servicios\Hidrocapital.aspx.cs">
+      <DependentUpon>Hidrocapital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Pagos\Servicios\Hidrocapital.aspx.designer.cs">
+      <DependentUpon>Hidrocapital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Pagos\Tarjetas\EnBAV.aspx.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Pagos\Tarjetas\EnBAV.aspx.designer.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Pagos\Tarjetas\OtrosBancos.aspx.cs">
+      <DependentUpon>OtrosBancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Pagos\Tarjetas\OtrosBancos.aspx.designer.cs">
+      <DependentUpon>OtrosBancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ExtraTDC\ContratoExtraEfect.aspx.cs">
+      <DependentUpon>ContratoExtraEfect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ExtraTDC\ContratoExtraEfect.aspx.designer.cs">
+      <DependentUpon>ContratoExtraEfect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Servicios\Referencias\ReferenciaCuenta.aspx.cs">
+      <DependentUpon>ReferenciaCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Servicios\Referencias\ReferenciaCuenta.aspx.designer.cs">
+      <DependentUpon>ReferenciaCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Servicios\Referencias\ReferenciaImpresion.aspx.cs">
+      <DependentUpon>ReferenciaImpresion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Servicios\Referencias\ReferenciaImpresion.aspx.designer.cs">
+      <DependentUpon>ReferenciaImpresion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SessionOut.aspx.cs">
+      <DependentUpon>SessionOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\SessionOut.aspx.designer.cs">
+      <DependentUpon>SessionOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\TipoError.cs" />
+    <Compile Include="pages\Transferencias\EnBAV.aspx.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Transferencias\EnBAV.aspx.designer.cs">
+      <DependentUpon>EnBAV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Transferencias\OtrosBancos.aspx.cs">
+      <DependentUpon>OtrosBancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Transferencias\OtrosBancos.aspx.designer.cs">
+      <DependentUpon>OtrosBancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalNormal.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="sessionlogout.aspx.cs">
+      <DependentUpon>sessionlogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sessionlogout.aspx.designer.cs">
+      <DependentUpon>sessionlogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <Compile Include="UserControls\BAVCommons\DropDownListCuentas.cs" />
+    <Compile Include="UserControls\BAVCommons\DropDownListCuotas.cs" />
+    <Compile Include="UserControls\BAVCommons\DropDownListPaises.cs" />
+    <Compile Include="UserControls\BAVCommons\TipoCombo.cs" />
+    <Compile Include="UserControls\BAVCommons\TipoComboCuentaFormato.cs" />
+    <Compile Include="UserControls\BAVCommons\TipoCuentaConsulta.cs" />
+    <Compile Include="UserControls\BAVVK\TipoTeclado.cs" />
+    <Compile Include="UserControls\BAVVK\VK.cs" />
+    <Compile Include="UserControls\Menu\BAVMenu.ascx.cs">
+      <DependentUpon>BAVMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Menu\BAVMenu.ascx.designer.cs">
+      <DependentUpon>BAVMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PreguntasDesafio.ascx.cs">
+      <DependentUpon>PreguntasDesafio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PreguntasDesafio.ascx.designer.cs">
+      <DependentUpon>PreguntasDesafio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsAfiliados\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsErrores\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsExtraefectivo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsFavoritos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsGlobal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsIbsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsLogons\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsMensajeria\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsMenu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsNotif_IBP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsServicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsSession\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSTedexis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsTransaccion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="ws\DetallesViaje.cs" />
+    <Compile Include="ws\Data.asmx.cs">
+      <DependentUpon>Data.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\FavoritosAfiliado.cs" />
+    <Compile Include="ws\Movimientos.cs" />
+    <Compile Include="ws\ResponseWs_I_.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.19.52.230:8080/Adelanto_Credito_SOAP/services/ExtraCredito%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsExtraefectivo\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8080/Adelanto_Credito_SOAP/services/ExtraCredito%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsExtraefectivo_ExtraCreditoService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8080/bavWebSrvIbs/services/IbsService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsIbsService\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8080/bavWebSrvIbs/services/IbsService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsIbsService_IbsServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsAfiliados.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsAfiliados\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsAfiliados.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsAfiliados_WsAfiliados</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8083/Service.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsMensajeria\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8083/Service.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsMensajeria_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSTedexis\</RelPath>
+      <UpdateFromURL>http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WSTedexis_M4WSIntSR</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsErrores.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsErrores\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsErrores.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsErrores_WsErrores</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsFavoritos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsFavoritos\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsFavoritos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsFavoritos_WsFavoritos</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsGlobal.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsGlobal\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsGlobal.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsGlobal_WsGlobal</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsLogons.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsLogons\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsLogons.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsLogons_WsLogons</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsMenu.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsMenu\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsMenu.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsMenu_WsMenu</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsServicios.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsServicios\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsServicios.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsServicios_WsServicios</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsSession.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsSession\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsSession.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsSession_WsSession</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8082/WsTransaccion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsTransaccion\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8082/WsTransaccion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsTransaccion_WsTransaccion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.52.230:8084/WsNotif_IBP.asmx.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsNotif_IBP\</RelPath>
+      <UpdateFromURL>http://172.19.52.230:8084/WsNotif_IBP.asmx.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IBBAV_WsNotif_IBP_WsNotif_IBP_asmx</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSTedexis\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49169</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49170</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

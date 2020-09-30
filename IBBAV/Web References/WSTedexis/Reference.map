@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR?wsdl" filename="M4WSIntSR.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

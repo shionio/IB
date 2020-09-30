@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MenuDinamicoNatural">
+        <s:complexType />
+      </s:element>
+      <s:element name="MenuDinamicoNaturalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MenuDinamicoNaturalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaxMinTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sCod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sType" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaxMinTransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaxMinTransaccionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MenuDinamicoNaturalSoapIn">
+    <wsdl:part name="parameters" element="tns:MenuDinamicoNatural" />
+  </wsdl:message>
+  <wsdl:message name="MenuDinamicoNaturalSoapOut">
+    <wsdl:part name="parameters" element="tns:MenuDinamicoNaturalResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaxMinTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaxMinTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="getMaxMinTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaxMinTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsMenuSoap">
+    <wsdl:operation name="MenuDinamicoNatural">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna opciones del Menu Dinamico</wsdl:documentation>
+      <wsdl:input message="tns:MenuDinamicoNaturalSoapIn" />
+      <wsdl:output message="tns:MenuDinamicoNaturalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaxMinTransaccion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Maximos y Minimos para una transaccion</wsdl:documentation>
+      <wsdl:input message="tns:getMaxMinTransaccionSoapIn" />
+      <wsdl:output message="tns:getMaxMinTransaccionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsMenuSoap" type="tns:WsMenuSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MenuDinamicoNatural">
+      <soap:operation soapAction="http://tempuri.org/MenuDinamicoNatural" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxMinTransaccion">
+      <soap:operation soapAction="http://tempuri.org/getMaxMinTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsMenuSoap12" type="tns:WsMenuSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MenuDinamicoNatural">
+      <soap12:operation soapAction="http://tempuri.org/MenuDinamicoNatural" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxMinTransaccion">
+      <soap12:operation soapAction="http://tempuri.org/getMaxMinTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsMenu">
+    <wsdl:port name="WsMenuSoap" binding="tns:WsMenuSoap">
+      <soap:address location="http://172.19.52.230:8082/WsMenu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsMenuSoap12" binding="tns:WsMenuSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsMenu.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

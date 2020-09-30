@@ -1,0 +1,189 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BAVMaster.master.cs" Inherits="IBBAV.pages.BAVMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <script src="<%= ResolveUrl("~/js/bav/BAV.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/bav/Caching.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/bav/disable.js")%>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/css/normalize.css")%>" />
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/vendor/jquery-1.11.0.js")%>"></script>
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/bootstrap/css/bootstrap.min.css")%>" />
+    <script src="<%= ResolveUrl("~/bootstrap/js/bootstrap.min.js")%>"></script>
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/css/non-responsive.css")%>" />
+    <link rel="shortcut icon" href="<%= ResolveUrl("~/images/fav/icon.png")%>" type="image/x-icon" />
+    <script src="<%= ResolveUrl("~/js/moment.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/bav/form-bav.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/bav/jquery.timers.js")%>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/css/customize.css")%>" />
+    <style>
+        body
+        {
+            min-width: 350px !important;
+            padding: 0;
+            font-family: Trebuchet MS;
+            font-size: 9pt;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .panel-heading
+        {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4B984B), color-stop(1, #336633));
+                background: -moz-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -webkit-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -o-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -ms-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: linear-gradient(to bottom, #4B984B 5%, #336633 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4B984B', endColorstr='#336633',GradientType=0);
+                background-color: #4B984B;
+            border-color: #336633 !important;
+        }
+
+        .panel-primary
+        {
+            border-color: #336633 !important;
+        }
+
+        .exit h3:hover
+        {
+            color: #dd4814;
+            cursor: pointer;
+        }
+
+        .form-control
+        {
+            font-size: 9pt;
+        }
+
+        th
+        {
+              -webkit-box-shadow: inset 0px 1px 0px 0px #8E8E8D;
+            box-shadow: inset 0px 1px 0px 0px #8E8E8D;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8E8E8D), color-stop(1, #B8B2B2));
+            background: -moz-linear-gradient(top, #8E8E8D 5%, #B8B2B2 100%);
+            background: -webkit-linear-gradient(top, #8E8E8D 5%, #B8B2B2 100%);
+            background: -o-linear-gradient(top, #8E8E8D 5%, #B8B2B2 100%);
+            background: -ms-linear-gradient(top, #8E8E8D 5%, #B8B2B2 100%);
+            background: linear-gradient(to bottom, #8E8E8D 5%, #B8B2B2 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8E8E8D', endColorstr='#B8B2B2',GradientType=0);
+            background-color: #8E8E8D;
+            color: white;
+        }
+        a
+        {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#logout").on("click", function (e) {
+
+                window.parent.location.href = "<%= ResolveClientUrl("~/logout.aspx")%>";
+                    e.preventDefault();
+                });
+
+                $(".alert").find(".close").on("click", function (x) {
+
+                    $(".alert").fadeOut("slow");
+                    //$(x).parent().fadeOut("slow");
+                })
+
+                
+        });
+
+        
+
+        function showAlert(t, msg) {
+            switch (t) {
+                case "Alerta": {
+                    var a = $(".alert");
+                    a.addClass("alert-danger");
+                    a.find(".msgIcon").addClass("glyphicon glyphicon-exclamation-sign");
+                    var m = a.find(".msg");                    
+                    m.html(msg);
+                    a.show();
+                    break;
+                }
+                case "Info": {
+                    var a = $(".alert");
+                    a.addClass("alert-info");
+                    a.find(".msgIcon").addClass("glyphicon glyphicon-info-sign");
+                    var m = a.find(".msg");
+                    m.html(msg);
+                    a.show();
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/resource.js")%>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav id="navbarmaster" class="navbar navbar-default" style="width: 100%;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a id="TituloPagina" class="navbar-brand" href="#">
+                        <asp:Literal ID="liTituloPagina" runat="server"></asp:Literal></a>
+                </div>
+                <div class="navbar-header navbar-right" style="margin-right: -15px; margin-left: 10px;">
+                    <a id="logout" class="navbar-brand" href="javascript:void(0);"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="text-align: right;">Última Sesión:
+                        <asp:Literal ID="liFechaHoraUltSes" runat="server"></asp:Literal><br />
+                        <asp:Literal ID="liNobmreUsuario" runat="server"></asp:Literal><br />
+                        <asp:Literal ID="liFecha" runat="server"></asp:Literal>
+                    </li>
+                    <li>&nbsp;</li>
+                </ul>
+
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                        <asp:Panel id="pnlMensaje" CssClass="alert" role="alert" runat="server" Visible="false">
+                    <a class="close" href="#" style="top: -3px;position: relative;">&times;</a>
+                    <asp:Label ID="lblMensajeIcon" runat="server"></asp:Label>
+                    <span class="sr-only">Error:</span>
+                    <asp:Literal ID="liMensaje" runat="server"></asp:Literal>
+                </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
+            <div id="dvMensajes" class="alert" role="alert" style="display:none">
+                <a class="close" href="#" style="top: -3px;position: relative;">&times;</a>
+                <span class="msgIcon" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span class="msg"></span>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        
+    </form>
+    <script>
+        setFields();
+    </script>
+    
+    
+</body>
+</html>

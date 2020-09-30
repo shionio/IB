@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PasswordUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AF_PasswordOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AF_PasswordNew" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_DiasPassword" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FI_IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TI_Nemotecnico" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sCod" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordUpdateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntentosValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AF_Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AF_RespuestaPD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FI_IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TI_Nemotecnico" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sCod" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntentosValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IntentosValidateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarAfiliacionIntentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarAfiliacionIntentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarAfiliacionIntentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberFailedLogon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberFailedLogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumberFailedLogonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearAcceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearAccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BloquearAccesoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PasswordUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:PasswordUpdate" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:PasswordUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntentosValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:IntentosValidate" />
+  </wsdl:message>
+  <wsdl:message name="IntentosValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:IntentosValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarAfiliacionIntentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarAfiliacionIntentos" />
+  </wsdl:message>
+  <wsdl:message name="ValidarAfiliacionIntentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarAfiliacionIntentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberFailedLogonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumberFailedLogon" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberFailedLogonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumberFailedLogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="BloquearAccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearAcceso" />
+  </wsdl:message>
+  <wsdl:message name="BloquearAccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearAccesoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsLogonsSoap">
+    <wsdl:operation name="PasswordUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza el password del Usuario</wsdl:documentation>
+      <wsdl:input message="tns:PasswordUpdateSoapIn" />
+      <wsdl:output message="tns:PasswordUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntentosValidate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza el password del Usuario</wsdl:documentation>
+      <wsdl:input message="tns:IntentosValidateSoapIn" />
+      <wsdl:output message="tns:IntentosValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAfiliacionIntentos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valida los intentos de la afiliacion por SMS</wsdl:documentation>
+      <wsdl:input message="tns:ValidarAfiliacionIntentosSoapIn" />
+      <wsdl:output message="tns:ValidarAfiliacionIntentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberFailedLogon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna numero de intentos fallidos</wsdl:documentation>
+      <wsdl:input message="tns:GetNumberFailedLogonSoapIn" />
+      <wsdl:output message="tns:GetNumberFailedLogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearAcceso">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Bloquea acceso al usuario</wsdl:documentation>
+      <wsdl:input message="tns:BloquearAccesoSoapIn" />
+      <wsdl:output message="tns:BloquearAccesoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsLogonsSoap" type="tns:WsLogonsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PasswordUpdate">
+      <soap:operation soapAction="http://tempuri.org/PasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntentosValidate">
+      <soap:operation soapAction="http://tempuri.org/IntentosValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAfiliacionIntentos">
+      <soap:operation soapAction="http://tempuri.org/ValidarAfiliacionIntentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberFailedLogon">
+      <soap:operation soapAction="http://tempuri.org/GetNumberFailedLogon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearAcceso">
+      <soap:operation soapAction="http://tempuri.org/BloquearAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsLogonsSoap12" type="tns:WsLogonsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PasswordUpdate">
+      <soap12:operation soapAction="http://tempuri.org/PasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntentosValidate">
+      <soap12:operation soapAction="http://tempuri.org/IntentosValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAfiliacionIntentos">
+      <soap12:operation soapAction="http://tempuri.org/ValidarAfiliacionIntentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberFailedLogon">
+      <soap12:operation soapAction="http://tempuri.org/GetNumberFailedLogon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearAcceso">
+      <soap12:operation soapAction="http://tempuri.org/BloquearAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsLogons">
+    <wsdl:port name="WsLogonsSoap" binding="tns:WsLogonsSoap">
+      <soap:address location="http://172.19.52.230:8082/WsLogons.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsLogonsSoap12" binding="tns:WsLogonsSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsLogons.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

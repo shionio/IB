@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NotificacionAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="inicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoIns" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumIns" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificacionAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NotificacionAddResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DestinoDel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="destinoID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DestinoDelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DestinoDelResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DestinoAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="inicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fin" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DestinoAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DestinoAddResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificacionExpiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificacionExpiryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NotificacionExpiryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificacionVerify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificacionVerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NotificacionVerifyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaDestPeriodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaDestPeriodoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaDestPeriodoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaConexion">
+        <s:complexType />
+      </s:element>
+      <s:element name="ValidaConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaConexionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaPaises">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListaPaisesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaPaisesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetalleNotificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetalleNotificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DetalleNotificacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestriccionAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="decimalIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instTipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestriccionAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RestriccionAddResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestriccionVerify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestriccionVerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestriccionVerifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NotificacionAddSoapIn">
+    <wsdl:part name="parameters" element="tns:NotificacionAdd" />
+  </wsdl:message>
+  <wsdl:message name="NotificacionAddSoapOut">
+    <wsdl:part name="parameters" element="tns:NotificacionAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="DestinoDelSoapIn">
+    <wsdl:part name="parameters" element="tns:DestinoDel" />
+  </wsdl:message>
+  <wsdl:message name="DestinoDelSoapOut">
+    <wsdl:part name="parameters" element="tns:DestinoDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="DestinoAddSoapIn">
+    <wsdl:part name="parameters" element="tns:DestinoAdd" />
+  </wsdl:message>
+  <wsdl:message name="DestinoAddSoapOut">
+    <wsdl:part name="parameters" element="tns:DestinoAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotificacionExpirySoapIn">
+    <wsdl:part name="parameters" element="tns:NotificacionExpiry" />
+  </wsdl:message>
+  <wsdl:message name="NotificacionExpirySoapOut">
+    <wsdl:part name="parameters" element="tns:NotificacionExpiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotificacionVerifySoapIn">
+    <wsdl:part name="parameters" element="tns:NotificacionVerify" />
+  </wsdl:message>
+  <wsdl:message name="NotificacionVerifySoapOut">
+    <wsdl:part name="parameters" element="tns:NotificacionVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaDestPeriodoSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaDestPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="ValidaDestPeriodoSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaDestPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaConexion" />
+  </wsdl:message>
+  <wsdl:message name="ValidaConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaPaisesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaPaises" />
+  </wsdl:message>
+  <wsdl:message name="ListaPaisesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DetalleNotificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:DetalleNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="DetalleNotificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:DetalleNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestriccionAddSoapIn">
+    <wsdl:part name="parameters" element="tns:RestriccionAdd" />
+  </wsdl:message>
+  <wsdl:message name="RestriccionAddSoapOut">
+    <wsdl:part name="parameters" element="tns:RestriccionAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestriccionVerifySoapIn">
+    <wsdl:part name="parameters" element="tns:RestriccionVerify" />
+  </wsdl:message>
+  <wsdl:message name="RestriccionVerifySoapOut">
+    <wsdl:part name="parameters" element="tns:RestriccionVerifyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsNotif_IBP_asmxSoap">
+    <wsdl:operation name="NotificacionAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega nueva notificación, destino e instrumentos</wsdl:documentation>
+      <wsdl:input message="tns:NotificacionAddSoapIn" />
+      <wsdl:output message="tns:NotificacionAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DestinoDel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina destinos</wsdl:documentation>
+      <wsdl:input message="tns:DestinoDelSoapIn" />
+      <wsdl:output message="tns:DestinoDelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DestinoAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega destinos</wsdl:documentation>
+      <wsdl:input message="tns:DestinoAddSoapIn" />
+      <wsdl:output message="tns:DestinoAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionExpiry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Inactiva notificación vencida</wsdl:documentation>
+      <wsdl:input message="tns:NotificacionExpirySoapIn" />
+      <wsdl:output message="tns:NotificacionExpirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve 1 si existe notificación. 0 si no existe notificación asociada a un afiliado</wsdl:documentation>
+      <wsdl:input message="tns:NotificacionVerifySoapIn" />
+      <wsdl:output message="tns:NotificacionVerifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDestPeriodo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve 1 si existe notificación y se puede agregar destinos. 0 si no existe notificación o no se pude agregar más destinos</wsdl:documentation>
+      <wsdl:input message="tns:ValidaDestPeriodoSoapIn" />
+      <wsdl:output message="tns:ValidaDestPeriodoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaConexion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve todas las IP permitidas en Venezuela</wsdl:documentation>
+      <wsdl:input message="tns:ValidaConexionSoapIn" />
+      <wsdl:output message="tns:ValidaConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve listado de todos los paises de destino</wsdl:documentation>
+      <wsdl:input message="tns:ListaPaisesSoapIn" />
+      <wsdl:output message="tns:ListaPaisesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleNotificacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve los destinos de una notificacion</wsdl:documentation>
+      <wsdl:input message="tns:DetalleNotificacionSoapIn" />
+      <wsdl:output message="tns:DetalleNotificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega restriccion de afiliado</wsdl:documentation>
+      <wsdl:input message="tns:RestriccionAddSoapIn" />
+      <wsdl:output message="tns:RestriccionAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve N si el afiliado está restringido. S si tiene notificacion activa</wsdl:documentation>
+      <wsdl:input message="tns:RestriccionVerifySoapIn" />
+      <wsdl:output message="tns:RestriccionVerifySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsNotif_IBP_asmxSoap" type="tns:WsNotif_IBP_asmxSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NotificacionAdd">
+      <soap:operation soapAction="http://tempuri.org/NotificacionAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestinoDel">
+      <soap:operation soapAction="http://tempuri.org/DestinoDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestinoAdd">
+      <soap:operation soapAction="http://tempuri.org/DestinoAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionExpiry">
+      <soap:operation soapAction="http://tempuri.org/NotificacionExpiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionVerify">
+      <soap:operation soapAction="http://tempuri.org/NotificacionVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDestPeriodo">
+      <soap:operation soapAction="http://tempuri.org/ValidaDestPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaConexion">
+      <soap:operation soapAction="http://tempuri.org/ValidaConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaises">
+      <soap:operation soapAction="http://tempuri.org/ListaPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleNotificacion">
+      <soap:operation soapAction="http://tempuri.org/DetalleNotificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionAdd">
+      <soap:operation soapAction="http://tempuri.org/RestriccionAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionVerify">
+      <soap:operation soapAction="http://tempuri.org/RestriccionVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsNotif_IBP_asmxSoap12" type="tns:WsNotif_IBP_asmxSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NotificacionAdd">
+      <soap12:operation soapAction="http://tempuri.org/NotificacionAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestinoDel">
+      <soap12:operation soapAction="http://tempuri.org/DestinoDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestinoAdd">
+      <soap12:operation soapAction="http://tempuri.org/DestinoAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionExpiry">
+      <soap12:operation soapAction="http://tempuri.org/NotificacionExpiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionVerify">
+      <soap12:operation soapAction="http://tempuri.org/NotificacionVerify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDestPeriodo">
+      <soap12:operation soapAction="http://tempuri.org/ValidaDestPeriodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaConexion">
+      <soap12:operation soapAction="http://tempuri.org/ValidaConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaises">
+      <soap12:operation soapAction="http://tempuri.org/ListaPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleNotificacion">
+      <soap12:operation soapAction="http://tempuri.org/DetalleNotificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionAdd">
+      <soap12:operation soapAction="http://tempuri.org/RestriccionAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestriccionVerify">
+      <soap12:operation soapAction="http://tempuri.org/RestriccionVerify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsNotif_IBP_asmx">
+    <wsdl:port name="WsNotif_IBP_asmxSoap" binding="tns:WsNotif_IBP_asmxSoap">
+      <soap:address location="http://172.19.52.230:8084/WsNotif_IBP.asmx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsNotif_IBP_asmxSoap12" binding="tns:WsNotif_IBP_asmxSoap12">
+      <soap12:address location="http://172.19.52.230:8084/WsNotif_IBP.asmx.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

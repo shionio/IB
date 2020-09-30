@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IBBAV.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IBBAV_WsIbsService_IbsService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.18.52.162:8080/bavWebSrvIbs/services/IbsService</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsIbsService_IbsServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8080/bavWebSrvIbs/services/IbsService</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsNotif_IBP_WsNotif_IBP_asmx" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8084/WsNotif_IBP.asmx.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WSTedexis_M4WSIntSR" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR.M4WSIntSRHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsMenu_WsMenu" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsMenu.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsSession_WsSession" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsSession.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsErrores_WsErrores" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsErrores.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsLogons_WsLogons" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsLogons.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsGlobal_WsGlobal" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsGlobal.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsFavoritos_WsFavoritos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsFavoritos.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsServicios_WsServicios" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsServicios.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsTransaccion_WsTransaccion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsTransaccion.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsMensajeria_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8083/Service.asmx</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsExtraefectivo_ExtraCreditoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8080/Adelanto_Credito_SOAP/services/ExtraCredito</Value>
+    </Setting>
+    <Setting Name="IBBAV_WsAfiliados_WsAfiliados" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.19.52.230:8082/WsAfiliados.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

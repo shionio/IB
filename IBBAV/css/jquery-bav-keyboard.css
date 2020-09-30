@@ -1,0 +1,40 @@
+﻿            #keyboard{
+	            position:relative;
+                display: block; float: left; width: 50%; padding: 40px 0px 20px 0px;
+            }
+            .jkeyboard-jk{
+	            position: absolute;
+	            top:10px;
+	            left:-2px;
+	            z-index:999;
+            }
+            .jkeyboard-jk > div{
+	              width: 420px;
+            }
+            .jkeyboard-jk button {
+	            border: 1px solid rgba(0, 0, 0, 0.1);
+	            width: 29px;
+	            height: 29px;
+	            margin: 2px;
+	            text-align: center;
+	            vertical-align: middle;
+	            position: relative;
+	            padding: 1px;
+	            min-width: 0;
+	            max-width: 500px;
+	            min-height: 0;
+	            max-height: 50px;
+	            
+	            /*background-color: #F5F5F5;*/
+	            outline: none;
+	            border-radius: 3px;
+            }
+            .jkeyboard-jk button:active {
+	            box-shadow: 0 0 1px rgba(0,0,0,0.3);
+            }
+            .jkeyboard-jk button:hover {
+	        }
+
+            .jkeyboard-clear {
+                width:60px !important;
+            }

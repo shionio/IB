@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="BDI_ServiciosGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SE_ServicioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_ServiciosGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_ServiciosGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_CodigoAreaGetBySE_ServicioId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SE_ServicioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_CodigoAreaGetBySE_ServicioIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_CodigoAreaGetBySE_ServicioIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdAfiliadoServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdAfiliadoServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUpdAfiliadoServicioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelAfiliadoServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroContrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelAfiliadoServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelAfiliadoServicioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiciosByAfiliado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiciosByAfiliadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiciosByAfiliadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAfiliadoServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroContrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAfiliadoServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAfiliadoServicioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextReferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextReferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextReferenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BDI_ServiciosGetSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_ServiciosGet" />
+  </wsdl:message>
+  <wsdl:message name="BDI_ServiciosGetSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_ServiciosGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="BDI_CodigoAreaGetBySE_ServicioIdSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_CodigoAreaGetBySE_ServicioId" />
+  </wsdl:message>
+  <wsdl:message name="BDI_CodigoAreaGetBySE_ServicioIdSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_CodigoAreaGetBySE_ServicioIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdAfiliadoServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUpdAfiliadoServicio" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdAfiliadoServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUpdAfiliadoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelAfiliadoServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:DelAfiliadoServicio" />
+  </wsdl:message>
+  <wsdl:message name="DelAfiliadoServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:DelAfiliadoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiciosByAfiliadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiciosByAfiliado" />
+  </wsdl:message>
+  <wsdl:message name="GetServiciosByAfiliadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiciosByAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAfiliadoServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAfiliadoServicio" />
+  </wsdl:message>
+  <wsdl:message name="GetAfiliadoServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAfiliadoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextReferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextReferencia" />
+  </wsdl:message>
+  <wsdl:message name="GetNextReferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsServiciosSoap">
+    <wsdl:operation name="BDI_ServiciosGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna data de un Servicio</wsdl:documentation>
+      <wsdl:input message="tns:BDI_ServiciosGetSoapIn" />
+      <wsdl:output message="tns:BDI_ServiciosGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BDI_CodigoAreaGetBySE_ServicioId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Codigo de Area si el servicio es de telefonia,sino retorna un DataSet vacio</wsdl:documentation>
+      <wsdl:input message="tns:BDI_CodigoAreaGetBySE_ServicioIdSoapIn" />
+      <wsdl:output message="tns:BDI_CodigoAreaGetBySE_ServicioIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdAfiliadoServicio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega o Actualiza Favorito de Servicio</wsdl:documentation>
+      <wsdl:input message="tns:AddUpdAfiliadoServicioSoapIn" />
+      <wsdl:output message="tns:AddUpdAfiliadoServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAfiliadoServicio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Servicio asociado al afiliado</wsdl:documentation>
+      <wsdl:input message="tns:DelAfiliadoServicioSoapIn" />
+      <wsdl:output message="tns:DelAfiliadoServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiciosByAfiliado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Servicios por Afiliado</wsdl:documentation>
+      <wsdl:input message="tns:GetServiciosByAfiliadoSoapIn" />
+      <wsdl:output message="tns:GetServiciosByAfiliadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAfiliadoServicio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna servicio afiliado</wsdl:documentation>
+      <wsdl:input message="tns:GetAfiliadoServicioSoapIn" />
+      <wsdl:output message="tns:GetAfiliadoServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextReferencia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Genera numero de referencia para Servicios</wsdl:documentation>
+      <wsdl:input message="tns:GetNextReferenciaSoapIn" />
+      <wsdl:output message="tns:GetNextReferenciaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsServiciosSoap" type="tns:WsServiciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BDI_ServiciosGet">
+      <soap:operation soapAction="http://tempuri.org/BDI_ServiciosGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_CodigoAreaGetBySE_ServicioId">
+      <soap:operation soapAction="http://tempuri.org/BDI_CodigoAreaGetBySE_ServicioId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdAfiliadoServicio">
+      <soap:operation soapAction="http://tempuri.org/AddUpdAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAfiliadoServicio">
+      <soap:operation soapAction="http://tempuri.org/DelAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiciosByAfiliado">
+      <soap:operation soapAction="http://tempuri.org/GetServiciosByAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAfiliadoServicio">
+      <soap:operation soapAction="http://tempuri.org/GetAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextReferencia">
+      <soap:operation soapAction="http://tempuri.org/GetNextReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsServiciosSoap12" type="tns:WsServiciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BDI_ServiciosGet">
+      <soap12:operation soapAction="http://tempuri.org/BDI_ServiciosGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_CodigoAreaGetBySE_ServicioId">
+      <soap12:operation soapAction="http://tempuri.org/BDI_CodigoAreaGetBySE_ServicioId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdAfiliadoServicio">
+      <soap12:operation soapAction="http://tempuri.org/AddUpdAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAfiliadoServicio">
+      <soap12:operation soapAction="http://tempuri.org/DelAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiciosByAfiliado">
+      <soap12:operation soapAction="http://tempuri.org/GetServiciosByAfiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAfiliadoServicio">
+      <soap12:operation soapAction="http://tempuri.org/GetAfiliadoServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextReferencia">
+      <soap12:operation soapAction="http://tempuri.org/GetNextReferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsServicios">
+    <wsdl:port name="WsServiciosSoap" binding="tns:WsServiciosSoap">
+      <soap:address location="http://172.19.52.230:8082/WsServicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsServiciosSoap12" binding="tns:WsServiciosSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsServicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

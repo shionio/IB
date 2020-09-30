@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BAVMasterSimple.master.cs" Inherits="IBBAV.pages.BAVMasterSimple" %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="<%= ResolveUrl("~/js/bav/BAV.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/bav/Caching.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/bav/disable.js")%>"></script>
+    <script src="<%= ResolveUrl("~/js/vendor/jquery-1.11.0.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/tooltipsy.min.js") %>"></script>
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/main.aspx") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/font-awesome.min.css") %>">
+    <link rel="shortcut icon" href="<%= ResolveUrl("~/images/fav/icon.png")%>" type="image/x-icon" />
+    
+    <link href="<%= ResolveUrl("~/bootstrap/css/bootstrap.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/bootstrap/css/bootstrap-theme.css") %>" rel="stylesheet" />
+    <style type="text/css">
+      
+        BODY
+        {
+            position: relative;
+            height: 100%;
+			font-family: 'MyriadWebPro' sans-serif;
+            font-size: 12pt;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        input[type="text"], input[type="password"], textarea
+        {
+            display: inline-block;
+            background-color: #ECF3EC; /*Sustituir el fondo gris rojiso #f1e9e9, por gris verdoso #ECF3EC*/
+            padding: 5px 6px;
+           /* margin-bottom: 9px;*/
+            font-size: 16px;
+            line-height: 18px;
+            color: #555555;
+            min-height: 34px;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            outline: none;
+        }
+
+            input[type=text]:focus, input[type="password"]:focus, textarea:focus, select:focus
+            {
+                background-color: #E5FFBD; /*Sustituir el fondo amarillo rojiso #faffbd, por amarillo verdoso #ECF3EC*/
+                border: 1px solid #336633; /*Sustituir el borde rojiso #f1e9e9, por verde #ECF3EC*/
+                -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            }
+/* botones */
+        .btn
+        {
+            -moz-box-shadow: inset 0px 1px 0px 0px #8E8E8D;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #8E8E8D;
+            box-shadow: inset 0px 1px 0px 0px #8E8E8D;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8E8E8D), color-stop(1, #666666));
+            background: -moz-linear-gradient(top, #8E8E8D 5%, #666666 100%);
+            background: -webkit-linear-gradient(top, #8E8E8D 5%, #666666 100%);
+            background: -o-linear-gradient(top, #8E8E8D 5%, #666666 100%);
+            background: -ms-linear-gradient(top, #8E8E8D 5%, #666666 100%);
+            background: linear-gradient(to bottom, #8E8E8D 5%, #666666 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8E8E8D', endColorstr='#666666',GradientType=0);
+            background-color: #8E8E8D;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #666666;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Trebuchet MS;
+            font-size: 14px;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #336633;
+        }
+
+            .btn:hover
+            {
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4B984B), color-stop(1, #336633));
+                background: -moz-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -webkit-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -o-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: -ms-linear-gradient(top, #4B984B 5%, #336633 100%);
+                background: linear-gradient(to bottom, #4B984B 5%, #336633 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4B984B', endColorstr='#336633',GradientType=0);
+                background-color: #4B984B;
+                color: #ffffff;
+            }
+
+            .btn:active
+            {
+                position: relative;
+                top: 1px;
+            }
+
+        a
+        {
+            color: #336633;
+            text-decoration: none;
+        }
+
+            a, a *
+            {
+                cursor: pointer;
+                outline: none;
+            }
+
+         .info {
+            cursor: help;
+            margin-left: 4px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div class="header-container">
+        <header class="wrapper clearfix">
+			<img class="img-rounded logo-center" src="<%=ResolveUrl("~/images/header.png")%>" alt="">
+		</header>
+    </div>
+    <div class="main-container wrapper" style="min-width:1024px;">
+        <div class="main wrapper">
+		    <form id="form1" runat="server">
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </form>
+        </div> <!-- #main -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SA_AfiliadoGetByAF_CodCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_CodCliente" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_AfiliadoGetByAF_CodClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_AfiliadoGetByAF_CodClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_AfiliadoGetBySession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_AfiliadoGetBySessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_AfiliadoGetBySessionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByCO_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nClave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nValorIn" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByCO_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosGetByCO_IdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByTarjetaCedula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNumTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByTarjetaCedulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosGetByTarjetaCedulaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByCedula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByCedulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosGetByCedulaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetByNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosGetByNombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosCHKCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosCHKCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosCHKCardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_IdIn" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosDeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuarioIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PasswordIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FI_IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosLoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadosGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosAddUpd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nES_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PasswordTransacciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PreguntaDesafio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_RespuestaPD" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nST_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClPhoenix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Rif" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nFI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_ApruebaTr" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_IniciaTr" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_CodCliente" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_CodOficina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosAddUpdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosAddUpdResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfilAddUpd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCodMenuListIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCtasListIn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_Codigo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_DocId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_TipoDocId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_EdificioCasa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Urbanizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_CodigoPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Pais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCA_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Email2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Telefono2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Rif" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nES_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PasswordTransacciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PreguntaDesafio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_RespuestaPD" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nST_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClPhoenix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Rif" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nFI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_ApruebaTr" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_IniciaTr" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_CodCliente" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_CodOficina" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_DiasPassword" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfilAddUpdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfilAddUpdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioSecundarioAddUpd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_DocId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_TipoDocId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCA_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Email2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCO_Rif" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nES_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCO_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PasswordTransacciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nST_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_Rif" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nFI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_ApruebaTr" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_IniciaTr" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioSecundarioAddUpdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioSecundarioAddUpdResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosUpdCLEsp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNewPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosUpdCLEspResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosUpdCLEspResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelUsuSecund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_RifIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_IdListIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelUsuSecundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelUsuSecundResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambioEstatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_IdListIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambioEstatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CambioEstatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosRestPassw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_IdIn" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_PasswordIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosRestPasswResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosRestPasswResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chkErrorAfiliacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAction" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chkErrorAfiliacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chkErrorAfiliacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosChkRespDesafio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sAction" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosChkRespDesafioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosChkRespDesafioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoschkIntentosTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRespuestaClave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipoFalla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransaccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClaveBuena" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoschkIntentosTransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadoschkIntentosTransaccionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteAfiliado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_RifIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_CedulaIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuarioIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteAfiliadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteAfiliadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarFailedLogons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarFailedLogonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarFailedLogonsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosActualizaLoginTransaccUPD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadosActualizaLoginTransaccUPDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadosActualizaLoginTransaccUPDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSPasswordUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSPasswordUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMSPasswordUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSContactoCelularUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="af_id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="celular" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSContactoCelularUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SMSContactoCelularUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grupo" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreguntasGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="af_id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreguntasAfiliadoGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="af_id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta1" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta2" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreguntasAfiliadoValidateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="af_id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta2" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta3" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta4" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idpregunta5" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta5" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntasAfiliadoAddResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SA_AfiliadoGetByAF_CodClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_AfiliadoGetByAF_CodCliente" />
+  </wsdl:message>
+  <wsdl:message name="SA_AfiliadoGetByAF_CodClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_AfiliadoGetByAF_CodClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SA_AfiliadoGetBySessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_AfiliadoGetBySession" />
+  </wsdl:message>
+  <wsdl:message name="SA_AfiliadoGetBySessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_AfiliadoGetBySessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByCO_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByCO_Id" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByCO_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByCO_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByTarjetaCedulaSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByTarjetaCedula" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByTarjetaCedulaSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByTarjetaCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByCedulaSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByCedula" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByCedulaSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByNombre" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetByNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetByNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosCHKCardSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosCHKCard" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosCHKCardSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosCHKCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosDelete" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosLogin" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosGet" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosGetSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosAddUpdSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosAddUpd" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosAddUpdSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosAddUpdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfilAddUpdSoapIn">
+    <wsdl:part name="parameters" element="tns:AfilAddUpd" />
+  </wsdl:message>
+  <wsdl:message name="AfilAddUpdSoapOut">
+    <wsdl:part name="parameters" element="tns:AfilAddUpdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioSecundarioAddUpdSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioSecundarioAddUpd" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioSecundarioAddUpdSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioSecundarioAddUpdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosUpdCLEspSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosUpdCLEsp" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosUpdCLEspSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosUpdCLEspResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelUsuSecundSoapIn">
+    <wsdl:part name="parameters" element="tns:DelUsuSecund" />
+  </wsdl:message>
+  <wsdl:message name="DelUsuSecundSoapOut">
+    <wsdl:part name="parameters" element="tns:DelUsuSecundResponse" />
+  </wsdl:message>
+  <wsdl:message name="CambioEstatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CambioEstatus" />
+  </wsdl:message>
+  <wsdl:message name="CambioEstatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CambioEstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosRestPasswSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosRestPassw" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosRestPasswSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosRestPasswResponse" />
+  </wsdl:message>
+  <wsdl:message name="chkErrorAfiliacionSoapIn">
+    <wsdl:part name="parameters" element="tns:chkErrorAfiliacion" />
+  </wsdl:message>
+  <wsdl:message name="chkErrorAfiliacionSoapOut">
+    <wsdl:part name="parameters" element="tns:chkErrorAfiliacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosChkRespDesafioSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosChkRespDesafio" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosChkRespDesafioSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosChkRespDesafioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoschkIntentosTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoschkIntentosTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoschkIntentosTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoschkIntentosTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteAfiliadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteAfiliado" />
+  </wsdl:message>
+  <wsdl:message name="ExisteAfiliadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarFailedLogonsSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarFailedLogons" />
+  </wsdl:message>
+  <wsdl:message name="EliminarFailedLogonsSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarFailedLogonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosActualizaLoginTransaccUPDSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadosActualizaLoginTransaccUPD" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadosActualizaLoginTransaccUPDSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadosActualizaLoginTransaccUPDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SMSPasswordUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:SMSPasswordUpdate" />
+  </wsdl:message>
+  <wsdl:message name="SMSPasswordUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:SMSPasswordUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SMSContactoCelularUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:SMSContactoCelularUpdate" />
+  </wsdl:message>
+  <wsdl:message name="SMSContactoCelularUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:SMSContactoCelularUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasGetSoapIn">
+    <wsdl:part name="parameters" element="tns:PreguntasGet" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasGetSoapOut">
+    <wsdl:part name="parameters" element="tns:PreguntasGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoGetSoapIn">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoGet" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoGetSoapOut">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoValidate" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoAddSoapIn">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoAdd" />
+  </wsdl:message>
+  <wsdl:message name="PreguntasAfiliadoAddSoapOut">
+    <wsdl:part name="parameters" element="tns:PreguntasAfiliadoAddResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsAfiliadosSoap">
+    <wsdl:operation name="SA_AfiliadoGetByAF_CodCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Trae al afiliado por el AF_CodigoCliente 'Rim_no' </wsdl:documentation>
+      <wsdl:input message="tns:SA_AfiliadoGetByAF_CodClienteSoapIn" />
+      <wsdl:output message="tns:SA_AfiliadoGetByAF_CodClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SA_AfiliadoGetBySession">
+      <wsdl:input message="tns:SA_AfiliadoGetBySessionSoapIn" />
+      <wsdl:output message="tns:SA_AfiliadoGetBySessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCO_Id">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica el afiliado por codigo o Id del afiliado</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosGetByCO_IdSoapIn" />
+      <wsdl:output message="tns:AfiliadosGetByCO_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByTarjetaCedula">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica Afiliado por numero de Tarjeta y cedula</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosGetByTarjetaCedulaSoapIn" />
+      <wsdl:output message="tns:AfiliadosGetByTarjetaCedulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCedula">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica Afiliado por Cedula</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosGetByCedulaSoapIn" />
+      <wsdl:output message="tns:AfiliadosGetByCedulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByNombre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica Afiliado por Nombre</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosGetByNombreSoapIn" />
+      <wsdl:output message="tns:AfiliadosGetByNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosCHKCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica Afiliado por Tarjeta</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosCHKCardSoapIn" />
+      <wsdl:output message="tns:AfiliadosCHKCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Afiliado</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosDeleteSoapIn" />
+      <wsdl:output message="tns:AfiliadosDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra entrada del afiliado al sistema</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosLoginSoapIn" />
+      <wsdl:output message="tns:AfiliadosLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ubica usuario</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosGetSoapIn" />
+      <wsdl:output message="tns:AfiliadosGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosAddUpd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega o Actualiza datos de un Afiliado</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosAddUpdSoapIn" />
+      <wsdl:output message="tns:AfiliadosAddUpdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfilAddUpd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega o Actualiza datos de un Afiliado</wsdl:documentation>
+      <wsdl:input message="tns:AfilAddUpdSoapIn" />
+      <wsdl:output message="tns:AfilAddUpdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioSecundarioAddUpd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega o Actualiza usuario secundario</wsdl:documentation>
+      <wsdl:input message="tns:UsuarioSecundarioAddUpdSoapIn" />
+      <wsdl:output message="tns:UsuarioSecundarioAddUpdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosUpdCLEsp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza Clave especial</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosUpdCLEspSoapIn" />
+      <wsdl:output message="tns:AfiliadosUpdCLEspSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelUsuSecund">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Usuario secundario</wsdl:documentation>
+      <wsdl:input message="tns:DelUsuSecundSoapIn" />
+      <wsdl:output message="tns:DelUsuSecundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambioEstatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cambia status del afiliado</wsdl:documentation>
+      <wsdl:input message="tns:CambioEstatusSoapIn" />
+      <wsdl:output message="tns:CambioEstatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosRestPassw">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restaura clave de Afiliado</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosRestPasswSoapIn" />
+      <wsdl:output message="tns:AfiliadosRestPasswSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chkErrorAfiliacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra Error de afiliacion</wsdl:documentation>
+      <wsdl:input message="tns:chkErrorAfiliacionSoapIn" />
+      <wsdl:output message="tns:chkErrorAfiliacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosChkRespDesafio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Chequea respuesta a Pregunta Desafio</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosChkRespDesafioSoapIn" />
+      <wsdl:output message="tns:AfiliadosChkRespDesafioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoschkIntentosTransaccion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra Intentos de afiliacion</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoschkIntentosTransaccionSoapIn" />
+      <wsdl:output message="tns:AfiliadoschkIntentosTransaccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteAfiliado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Chequea si el afiliado existe</wsdl:documentation>
+      <wsdl:input message="tns:ExisteAfiliadoSoapIn" />
+      <wsdl:output message="tns:ExisteAfiliadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarFailedLogons">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina registro de intentos fallidos de logon</wsdl:documentation>
+      <wsdl:input message="tns:EliminarFailedLogonsSoapIn" />
+      <wsdl:output message="tns:EliminarFailedLogonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosActualizaLoginTransaccUPD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza Login del Usuario</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadosActualizaLoginTransaccUPDSoapIn" />
+      <wsdl:output message="tns:AfiliadosActualizaLoginTransaccUPDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSPasswordUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva clave de transacciones para ser enviado por correo y mensaje de texto</wsdl:documentation>
+      <wsdl:input message="tns:SMSPasswordUpdateSoapIn" />
+      <wsdl:output message="tns:SMSPasswordUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSContactoCelularUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza el nro de celular del cliente</wsdl:documentation>
+      <wsdl:input message="tns:SMSContactoCelularUpdateSoapIn" />
+      <wsdl:output message="tns:SMSContactoCelularUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista de las preguntas por grupo</wsdl:documentation>
+      <wsdl:input message="tns:PreguntasGetSoapIn" />
+      <wsdl:output message="tns:PreguntasGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista de las preguntas de seguridad del usuario</wsdl:documentation>
+      <wsdl:input message="tns:PreguntasAfiliadoGetSoapIn" />
+      <wsdl:output message="tns:PreguntasAfiliadoGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoValidate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valida las preguntas del usuario</wsdl:documentation>
+      <wsdl:input message="tns:PreguntasAfiliadoValidateSoapIn" />
+      <wsdl:output message="tns:PreguntasAfiliadoValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Guarda las preguntas del usuario</wsdl:documentation>
+      <wsdl:input message="tns:PreguntasAfiliadoAddSoapIn" />
+      <wsdl:output message="tns:PreguntasAfiliadoAddSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsAfiliadosSoap" type="tns:WsAfiliadosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SA_AfiliadoGetByAF_CodCliente">
+      <soap:operation soapAction="http://tempuri.org/SA_AfiliadoGetByAF_CodCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_AfiliadoGetBySession">
+      <soap:operation soapAction="http://tempuri.org/SA_AfiliadoGetBySession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCO_Id">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosGetByCO_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByTarjetaCedula">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosGetByTarjetaCedula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCedula">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosGetByCedula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByNombre">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosGetByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosCHKCard">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosCHKCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosDelete">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosLogin">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGet">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosAddUpd">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosAddUpd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfilAddUpd">
+      <soap:operation soapAction="http://tempuri.org/AfilAddUpd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioSecundarioAddUpd">
+      <soap:operation soapAction="http://tempuri.org/UsuarioSecundarioAddUpd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosUpdCLEsp">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosUpdCLEsp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUsuSecund">
+      <soap:operation soapAction="http://tempuri.org/DelUsuSecund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambioEstatus">
+      <soap:operation soapAction="http://tempuri.org/CambioEstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosRestPassw">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosRestPassw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkErrorAfiliacion">
+      <soap:operation soapAction="http://tempuri.org/chkErrorAfiliacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosChkRespDesafio">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosChkRespDesafio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoschkIntentosTransaccion">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoschkIntentosTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteAfiliado">
+      <soap:operation soapAction="http://tempuri.org/ExisteAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarFailedLogons">
+      <soap:operation soapAction="http://tempuri.org/EliminarFailedLogons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosActualizaLoginTransaccUPD">
+      <soap:operation soapAction="http://tempuri.org/AfiliadosActualizaLoginTransaccUPD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSPasswordUpdate">
+      <soap:operation soapAction="http://tempuri.org/SMSPasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSContactoCelularUpdate">
+      <soap:operation soapAction="http://tempuri.org/SMSContactoCelularUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasGet">
+      <soap:operation soapAction="http://tempuri.org/PreguntasGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoGet">
+      <soap:operation soapAction="http://tempuri.org/PreguntasAfiliadoGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoValidate">
+      <soap:operation soapAction="http://tempuri.org/PreguntasAfiliadoValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoAdd">
+      <soap:operation soapAction="http://tempuri.org/PreguntasAfiliadoAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsAfiliadosSoap12" type="tns:WsAfiliadosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SA_AfiliadoGetByAF_CodCliente">
+      <soap12:operation soapAction="http://tempuri.org/SA_AfiliadoGetByAF_CodCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_AfiliadoGetBySession">
+      <soap12:operation soapAction="http://tempuri.org/SA_AfiliadoGetBySession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCO_Id">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosGetByCO_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByTarjetaCedula">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosGetByTarjetaCedula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByCedula">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosGetByCedula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGetByNombre">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosGetByNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosCHKCard">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosCHKCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosDelete">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosLogin">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosGet">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosAddUpd">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosAddUpd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfilAddUpd">
+      <soap12:operation soapAction="http://tempuri.org/AfilAddUpd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioSecundarioAddUpd">
+      <soap12:operation soapAction="http://tempuri.org/UsuarioSecundarioAddUpd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosUpdCLEsp">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosUpdCLEsp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUsuSecund">
+      <soap12:operation soapAction="http://tempuri.org/DelUsuSecund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambioEstatus">
+      <soap12:operation soapAction="http://tempuri.org/CambioEstatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosRestPassw">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosRestPassw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkErrorAfiliacion">
+      <soap12:operation soapAction="http://tempuri.org/chkErrorAfiliacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosChkRespDesafio">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosChkRespDesafio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoschkIntentosTransaccion">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoschkIntentosTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteAfiliado">
+      <soap12:operation soapAction="http://tempuri.org/ExisteAfiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarFailedLogons">
+      <soap12:operation soapAction="http://tempuri.org/EliminarFailedLogons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadosActualizaLoginTransaccUPD">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadosActualizaLoginTransaccUPD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSPasswordUpdate">
+      <soap12:operation soapAction="http://tempuri.org/SMSPasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSContactoCelularUpdate">
+      <soap12:operation soapAction="http://tempuri.org/SMSContactoCelularUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasGet">
+      <soap12:operation soapAction="http://tempuri.org/PreguntasGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoGet">
+      <soap12:operation soapAction="http://tempuri.org/PreguntasAfiliadoGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoValidate">
+      <soap12:operation soapAction="http://tempuri.org/PreguntasAfiliadoValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreguntasAfiliadoAdd">
+      <soap12:operation soapAction="http://tempuri.org/PreguntasAfiliadoAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsAfiliados">
+    <wsdl:port name="WsAfiliadosSoap" binding="tns:WsAfiliadosSoap">
+      <soap:address location="http://172.19.52.230:8082/WsAfiliados.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsAfiliadosSoap12" binding="tns:WsAfiliadosSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsAfiliados.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

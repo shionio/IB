@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://datos" xmlns:impl="http://com" targetNamespace="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://com">
+      <xsd:import namespace="http://datos" />
+      <xsd:element name="tarjetasL2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="tarjetasL2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="tarjetasL2Return" type="tns1:Tarjeta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaL2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+            <xsd:element name="cuenta" type="xsd:string" />
+            <xsd:element name="tarjeta" type="xsd:string" />
+            <xsd:element name="monto" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaL2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaL2Return" type="tns1:Solicitud" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="aprobacionL2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+            <xsd:element name="cuenta" type="xsd:string" />
+            <xsd:element name="tarjeta" type="xsd:string" />
+            <xsd:element name="monto" type="xsd:string" />
+            <xsd:element name="cuotas" type="xsd:string" />
+            <xsd:element name="montoCuotas" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="aprobacionL2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="aprobacionL2Return" type="tns1:Solicitud" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaTarjetas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaTarjetasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="consultaTarjetasReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultarCuotas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+            <xsd:element name="cuenta" type="xsd:string" />
+            <xsd:element name="tarjeta" type="xsd:string" />
+            <xsd:element name="monto" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultarCuotasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultarCuotasReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="aprobacionPago">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cedula" type="xsd:string" />
+            <xsd:element name="cuenta" type="xsd:string" />
+            <xsd:element name="tarjeta" type="xsd:string" />
+            <xsd:element name="monto" type="xsd:string" />
+            <xsd:element name="cuotas" type="xsd:string" />
+            <xsd:element name="montoCuotas" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="aprobacionPagoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="aprobacionPagoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://datos">
+      <xsd:import namespace="http://com" />
+      <xsd:complexType name="Tarjeta">
+        <xsd:sequence>
+          <xsd:element name="codRespuesta" nillable="true" type="xsd:string" />
+          <xsd:element name="descRespuesta" nillable="true" type="xsd:string" />
+          <xsd:element name="disponible" nillable="true" type="xsd:string" />
+          <xsd:element name="marca" nillable="true" type="xsd:string" />
+          <xsd:element name="numero" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Solicitud">
+        <xsd:sequence>
+          <xsd:element name="codRespuesta" nillable="true" type="xsd:string" />
+          <xsd:element name="cuotas" nillable="true" type="xsd:string" />
+          <xsd:element name="descRespueta" nillable="true" type="xsd:string" />
+          <xsd:element name="montoCuota" nillable="true" type="impl:ArrayOf_xsd_string" />
+          <xsd:element name="montoSolicitado" nillable="true" type="xsd:string" />
+          <xsd:element name="numeroCuenta" nillable="true" type="xsd:string" />
+          <xsd:element name="numeroTarjeta" nillable="true" type="xsd:string" />
+          <xsd:element name="referencia" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultaL2Response">
+    <wsdl:part name="parameters" element="impl:consultaL2Response" />
+  </wsdl:message>
+  <wsdl:message name="consultarCuotasResponse">
+    <wsdl:part name="parameters" element="impl:consultarCuotasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaTarjetasResponse">
+    <wsdl:part name="parameters" element="impl:consultaTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="aprobacionL2Request">
+    <wsdl:part name="parameters" element="impl:aprobacionL2" />
+  </wsdl:message>
+  <wsdl:message name="consultaTarjetasRequest">
+    <wsdl:part name="parameters" element="impl:consultaTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="aprobacionPagoResponse">
+    <wsdl:part name="parameters" element="impl:aprobacionPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="aprobacionL2Response">
+    <wsdl:part name="parameters" element="impl:aprobacionL2Response" />
+  </wsdl:message>
+  <wsdl:message name="consultarCuotasRequest">
+    <wsdl:part name="parameters" element="impl:consultarCuotas" />
+  </wsdl:message>
+  <wsdl:message name="tarjetasL2Response">
+    <wsdl:part name="parameters" element="impl:tarjetasL2Response" />
+  </wsdl:message>
+  <wsdl:message name="tarjetasL2Request">
+    <wsdl:part name="parameters" element="impl:tarjetasL2" />
+  </wsdl:message>
+  <wsdl:message name="aprobacionPagoRequest">
+    <wsdl:part name="parameters" element="impl:aprobacionPago" />
+  </wsdl:message>
+  <wsdl:message name="consultaL2Request">
+    <wsdl:part name="parameters" element="impl:consultaL2" />
+  </wsdl:message>
+  <wsdl:portType name="ExtraCredito">
+    <wsdl:operation name="tarjetasL2">
+      <wsdl:input name="tarjetasL2Request" message="impl:tarjetasL2Request" />
+      <wsdl:output name="tarjetasL2Response" message="impl:tarjetasL2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaL2">
+      <wsdl:input name="consultaL2Request" message="impl:consultaL2Request" />
+      <wsdl:output name="consultaL2Response" message="impl:consultaL2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="aprobacionL2">
+      <wsdl:input name="aprobacionL2Request" message="impl:aprobacionL2Request" />
+      <wsdl:output name="aprobacionL2Response" message="impl:aprobacionL2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaTarjetas">
+      <wsdl:input name="consultaTarjetasRequest" message="impl:consultaTarjetasRequest" />
+      <wsdl:output name="consultaTarjetasResponse" message="impl:consultaTarjetasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCuotas">
+      <wsdl:input name="consultarCuotasRequest" message="impl:consultarCuotasRequest" />
+      <wsdl:output name="consultarCuotasResponse" message="impl:consultarCuotasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="aprobacionPago">
+      <wsdl:input name="aprobacionPagoRequest" message="impl:aprobacionPagoRequest" />
+      <wsdl:output name="aprobacionPagoResponse" message="impl:aprobacionPagoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExtraCreditoSoapBinding" type="impl:ExtraCredito">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="tarjetasL2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="tarjetasL2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tarjetasL2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaL2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultaL2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultaL2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aprobacionL2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="aprobacionL2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="aprobacionL2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaTarjetas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultaTarjetasRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultaTarjetasResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCuotas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarCuotasRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultarCuotasResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aprobacionPago">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="aprobacionPagoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="aprobacionPagoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExtraCreditoService">
+    <wsdl:port name="ExtraCredito" binding="impl:ExtraCreditoSoapBinding">
+      <wsdlsoap:address location="http://172.19.52.230:8080/Adelanto_Credito_SOAP/services/ExtraCredito" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

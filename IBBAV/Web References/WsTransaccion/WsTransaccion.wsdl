@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AcumuladorTransVerify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AC_Monto" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MD_Cod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MD_CodTrans" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcumuladorTransVerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcumuladorTransVerifyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcumuladorTransAddUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AC_Monto" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MD_Cod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MD_CodTrans" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcumuladorTransAddUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcumuladorTransAddUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AcumuladorTransVerifySoapIn">
+    <wsdl:part name="parameters" element="tns:AcumuladorTransVerify" />
+  </wsdl:message>
+  <wsdl:message name="AcumuladorTransVerifySoapOut">
+    <wsdl:part name="parameters" element="tns:AcumuladorTransVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcumuladorTransAddUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AcumuladorTransAddUpdate" />
+  </wsdl:message>
+  <wsdl:message name="AcumuladorTransAddUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AcumuladorTransAddUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsTransaccionSoap">
+    <wsdl:operation name="AcumuladorTransVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifica el monto de la transaccion</wsdl:documentation>
+      <wsdl:input message="tns:AcumuladorTransVerifySoapIn" />
+      <wsdl:output message="tns:AcumuladorTransVerifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcumuladorTransAddUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifica el monto de la transaccion</wsdl:documentation>
+      <wsdl:input message="tns:AcumuladorTransAddUpdateSoapIn" />
+      <wsdl:output message="tns:AcumuladorTransAddUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsTransaccionSoap" type="tns:WsTransaccionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AcumuladorTransVerify">
+      <soap:operation soapAction="http://tempuri.org/AcumuladorTransVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcumuladorTransAddUpdate">
+      <soap:operation soapAction="http://tempuri.org/AcumuladorTransAddUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsTransaccionSoap12" type="tns:WsTransaccionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AcumuladorTransVerify">
+      <soap12:operation soapAction="http://tempuri.org/AcumuladorTransVerify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcumuladorTransAddUpdate">
+      <soap12:operation soapAction="http://tempuri.org/AcumuladorTransAddUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsTransaccion">
+    <wsdl:port name="WsTransaccionSoap" binding="tns:WsTransaccionSoap">
+      <soap:address location="http://172.19.52.230:8082/WsTransaccion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsTransaccionSoap12" binding="tns:WsTransaccionSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsTransaccion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

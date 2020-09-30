@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SA_CreateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_CreateSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_CreateSessionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_UpdateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sa" type="tns:SessionAfiliado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SessionAfiliado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sesion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoFin" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SES_CodStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SA_UpdateSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SA_UpdateSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_GetLastSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_GetLastSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_GetLastSessionResult" type="tns:SessionAfiliado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_GetSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_GetSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_GetSessionResult" type="tns:SessionAfiliado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SA_CreateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_CreateSession" />
+  </wsdl:message>
+  <wsdl:message name="SA_CreateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_CreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SA_UpdateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_UpdateSession" />
+  </wsdl:message>
+  <wsdl:message name="SA_UpdateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_UpdateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SA_GetLastSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_GetLastSession" />
+  </wsdl:message>
+  <wsdl:message name="SA_GetLastSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_GetLastSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SA_GetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_GetSession" />
+  </wsdl:message>
+  <wsdl:message name="SA_GetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_GetSessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsSessionSoap">
+    <wsdl:operation name="SA_CreateSession">
+      <wsdl:input message="tns:SA_CreateSessionSoapIn" />
+      <wsdl:output message="tns:SA_CreateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SA_UpdateSession">
+      <wsdl:input message="tns:SA_UpdateSessionSoapIn" />
+      <wsdl:output message="tns:SA_UpdateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetLastSession">
+      <wsdl:input message="tns:SA_GetLastSessionSoapIn" />
+      <wsdl:output message="tns:SA_GetLastSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetSession">
+      <wsdl:input message="tns:SA_GetSessionSoapIn" />
+      <wsdl:output message="tns:SA_GetSessionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsSessionSoap" type="tns:WsSessionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SA_CreateSession">
+      <soap:operation soapAction="http://tempuri.org/SA_CreateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_UpdateSession">
+      <soap:operation soapAction="http://tempuri.org/SA_UpdateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetLastSession">
+      <soap:operation soapAction="http://tempuri.org/SA_GetLastSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetSession">
+      <soap:operation soapAction="http://tempuri.org/SA_GetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsSessionSoap12" type="tns:WsSessionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SA_CreateSession">
+      <soap12:operation soapAction="http://tempuri.org/SA_CreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_UpdateSession">
+      <soap12:operation soapAction="http://tempuri.org/SA_UpdateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetLastSession">
+      <soap12:operation soapAction="http://tempuri.org/SA_GetLastSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_GetSession">
+      <soap12:operation soapAction="http://tempuri.org/SA_GetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsSession">
+    <wsdl:port name="WsSessionSoap" binding="tns:WsSessionSoap">
+      <soap:address location="http://172.19.52.230:8082/WsSession.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsSessionSoap12" binding="tns:WsSessionSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsSession.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PreguntaIBSByPRE_PreguntaIBSId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PRE_PreguntaIBSId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreguntaIBSByPRE_PreguntaIBSIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreguntaIBSByPRE_PreguntaIBSIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FailedFavoritosDeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FailedFavoritosAddResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FailedFavoritosGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FailedFavoritosGetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogPreguntasFavoritosAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="numeroPregunta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuestaCorrecta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogPreguntasFavoritosAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogPreguntasFavoritosAddResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogPreguntasFavoritosGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogPreguntasFavoritosGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogPreguntasFavoritosGetResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AfiliadoFavoritosGetByAfiliado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosGetByAfiliadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadoFavoritosGetByAfiliadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosGrupoGetByAfiliado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoFavoritoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosGrupoGetByAfiliadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadoFavoritosGrupoGetByAfiliadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFavoritoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroInstrumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AfiliadoFavoritosGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFavoritoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroInstrumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadoFavoritosDeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosAddUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFavoritoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroInstrumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CedulaRif" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Beneficiario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoTarjetaCredito" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AfiliadoFavoritosAddUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AfiliadoFavoritosAddUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoFavoritoGetOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipofavoritoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoFavoritoGetOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoFavoritoGetOneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PreguntaIBSByPRE_PreguntaIBSIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PreguntaIBSByPRE_PreguntaIBSId" />
+  </wsdl:message>
+  <wsdl:message name="PreguntaIBSByPRE_PreguntaIBSIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PreguntaIBSByPRE_PreguntaIBSIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosDelete" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosAddSoapIn">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosAdd" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosAddSoapOut">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosGetSoapIn">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosGet" />
+  </wsdl:message>
+  <wsdl:message name="FailedFavoritosGetSoapOut">
+    <wsdl:part name="parameters" element="tns:FailedFavoritosGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogPreguntasFavoritosAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogPreguntasFavoritosAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogPreguntasFavoritosAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogPreguntasFavoritosAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogPreguntasFavoritosGetSoapIn">
+    <wsdl:part name="parameters" element="tns:LogPreguntasFavoritosGet" />
+  </wsdl:message>
+  <wsdl:message name="LogPreguntasFavoritosGetSoapOut">
+    <wsdl:part name="parameters" element="tns:LogPreguntasFavoritosGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGetByAfiliadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGetByAfiliado" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGetByAfiliadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGetByAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGrupoGetByAfiliadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGrupoGetByAfiliado" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGrupoGetByAfiliadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGrupoGetByAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGetSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGet" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosGetSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosDelete" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosAddUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosAddUpdate" />
+  </wsdl:message>
+  <wsdl:message name="AfiliadoFavoritosAddUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AfiliadoFavoritosAddUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoFavoritoGetOneSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoFavoritoGetOne" />
+  </wsdl:message>
+  <wsdl:message name="TipoFavoritoGetOneSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoFavoritoGetOneResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsFavoritosSoap">
+    <wsdl:operation name="PreguntaIBSByPRE_PreguntaIBSId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista los campos de las preguntas desafio</wsdl:documentation>
+      <wsdl:input message="tns:PreguntaIBSByPRE_PreguntaIBSIdSoapIn" />
+      <wsdl:output message="tns:PreguntaIBSByPRE_PreguntaIBSIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Limpia tabla de Fallos de Favoritos</wsdl:documentation>
+      <wsdl:input message="tns:FailedFavoritosDeleteSoapIn" />
+      <wsdl:output message="tns:FailedFavoritosDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega Falla al registro de favoritos</wsdl:documentation>
+      <wsdl:input message="tns:FailedFavoritosAddSoapIn" />
+      <wsdl:output message="tns:FailedFavoritosAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna numero de respuesta incorrectas del usuario</wsdl:documentation>
+      <wsdl:input message="tns:FailedFavoritosGetSoapIn" />
+      <wsdl:output message="tns:FailedFavoritosGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra que ya se hizo esta pregunta al usuario</wsdl:documentation>
+      <wsdl:input message="tns:LogPreguntasFavoritosAddSoapIn" />
+      <wsdl:output message="tns:LogPreguntasFavoritosAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un arreglo de las preguntas que se han hecho a un usuario</wsdl:documentation>
+      <wsdl:input message="tns:LogPreguntasFavoritosGetSoapIn" />
+      <wsdl:output message="tns:LogPreguntasFavoritosGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGetByAfiliado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un dataset con los favoritos del cliente</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoFavoritosGetByAfiliadoSoapIn" />
+      <wsdl:output message="tns:AfiliadoFavoritosGetByAfiliadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGrupoGetByAfiliado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un Dataset con los favoritos de un tipo del cliente</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoFavoritosGrupoGetByAfiliadoSoapIn" />
+      <wsdl:output message="tns:AfiliadoFavoritosGrupoGetByAfiliadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un dataset con los datos del Favorito</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoFavoritosGetSoapIn" />
+      <wsdl:output message="tns:AfiliadoFavoritosGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina un favorito</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoFavoritosDeleteSoapIn" />
+      <wsdl:output message="tns:AfiliadoFavoritosDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosAddUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza un Favorito</wsdl:documentation>
+      <wsdl:input message="tns:AfiliadoFavoritosAddUpdateSoapIn" />
+      <wsdl:output message="tns:AfiliadoFavoritosAddUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoFavoritoGetOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Tipo de Favoritos</wsdl:documentation>
+      <wsdl:input message="tns:TipoFavoritoGetOneSoapIn" />
+      <wsdl:output message="tns:TipoFavoritoGetOneSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsFavoritosSoap" type="tns:WsFavoritosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PreguntaIBSByPRE_PreguntaIBSId">
+      <soap:operation soapAction="http://tempuri.org/PreguntaIBSByPRE_PreguntaIBSId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosDelete">
+      <soap:operation soapAction="http://tempuri.org/FailedFavoritosDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosAdd">
+      <soap:operation soapAction="http://tempuri.org/FailedFavoritosAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosGet">
+      <soap:operation soapAction="http://tempuri.org/FailedFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosAdd">
+      <soap:operation soapAction="http://tempuri.org/LogPreguntasFavoritosAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosGet">
+      <soap:operation soapAction="http://tempuri.org/LogPreguntasFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGetByAfiliado">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoFavoritosGetByAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGrupoGetByAfiliado">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoFavoritosGrupoGetByAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGet">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosDelete">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoFavoritosDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosAddUpdate">
+      <soap:operation soapAction="http://tempuri.org/AfiliadoFavoritosAddUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoFavoritoGetOne">
+      <soap:operation soapAction="http://tempuri.org/TipoFavoritoGetOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsFavoritosSoap12" type="tns:WsFavoritosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PreguntaIBSByPRE_PreguntaIBSId">
+      <soap12:operation soapAction="http://tempuri.org/PreguntaIBSByPRE_PreguntaIBSId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosDelete">
+      <soap12:operation soapAction="http://tempuri.org/FailedFavoritosDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosAdd">
+      <soap12:operation soapAction="http://tempuri.org/FailedFavoritosAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FailedFavoritosGet">
+      <soap12:operation soapAction="http://tempuri.org/FailedFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogPreguntasFavoritosAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogPreguntasFavoritosGet">
+      <soap12:operation soapAction="http://tempuri.org/LogPreguntasFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGetByAfiliado">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoFavoritosGetByAfiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGrupoGetByAfiliado">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoFavoritosGrupoGetByAfiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosGet">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoFavoritosGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosDelete">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoFavoritosDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AfiliadoFavoritosAddUpdate">
+      <soap12:operation soapAction="http://tempuri.org/AfiliadoFavoritosAddUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoFavoritoGetOne">
+      <soap12:operation soapAction="http://tempuri.org/TipoFavoritoGetOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsFavoritos">
+    <wsdl:port name="WsFavoritosSoap" binding="tns:WsFavoritosSoap">
+      <soap:address location="http://172.19.52.230:8082/WsFavoritos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsFavoritosSoap12" binding="tns:WsFavoritosSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsFavoritos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

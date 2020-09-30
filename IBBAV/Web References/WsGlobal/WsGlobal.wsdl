@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EstatusGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nES_IdIn" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstatusGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstatusGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Def_LovGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nCodTipoLovIn" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Def_LovGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Def_LovGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRefBankAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCod_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipoCuenta_Origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMonto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirigidoA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaAperturaCta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSaldoPromediom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMesesRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCifras" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipoRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRefBankAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogRefBankAddResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRegUsAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Trans" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCod_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConcepto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogRegUsAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogRegUsAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTransAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_NombreUsuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Trans" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAF_IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCod_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMonto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBanco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipo_Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBeneficiario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCedula_Id_B" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerial_Chequera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCheques" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTitular" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConcepto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMotivo_Suspension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDir_Envio_Chequera" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTransAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogTransAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_TipoTransaccionGet">
+        <s:complexType />
+      </s:element>
+      <s:element name="BDI_TipoTransaccionGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_TipoTransaccionGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_TipoTransaccionLogGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idtipopadre" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_TipoTransaccionLogGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_TipoTransaccionLogGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_TipoTransaccionPadreGet">
+        <s:complexType />
+      </s:element>
+      <s:element name="BDI_TipoTransaccionPadreGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_TipoTransaccionPadreGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTransGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipotransaccion" type="tns:TipoTransaccion" />
+            <s:element minOccurs="1" maxOccurs="1" name="AF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cod_Trans" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_TransD" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_TransH" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoD" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoH" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TipoTransaccion">
+        <s:restriction base="s:string">
+          <s:enumeration value="DelDia" />
+          <s:enumeration value="DelDiaAnterior" />
+          <s:enumeration value="DelMes" />
+          <s:enumeration value="DelMesAnterior" />
+          <s:enumeration value="PorRango" />
+          <s:enumeration value="Ultimos20" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="LogTransGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogTransGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTransDiarioAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Trans" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCod_Trans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMonto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTransDiarioAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogTransDiarioAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumeroOperDiarias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAF_Id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCuenta_Destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMonto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumeroOperDiariasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumeroOperDiariasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProveedoresGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nPV_IDIn" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProveedoresGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProveedoresGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProductoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgenciasGet">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgenciasGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgenciasGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgenciaGetById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgenciaGetByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgenciaGetByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposFind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTI_id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposFindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposFindResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conBFC" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BankGetByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conBFC" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BankGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BankGetByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetByBin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strBinId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankGetByBinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BankGetByBinResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumeroReferencia">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNumeroReferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumeroReferenciaResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumeroReferenciaCrediCard">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNumeroReferenciaCrediCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumeroReferenciaCrediCardResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkBineCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBink_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBankID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBinStatu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkBineCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkBineCardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipoTarjetas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nStatu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipoTarjetasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTipoTarjetasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_DatosCorreoGetByDC_CodTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codtrans" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BDI_DatosCorreoGetByDC_CodTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDI_DatosCorreoGetByDC_CodTransResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DiasPasswordget">
+        <s:complexType />
+      </s:element>
+      <s:element name="DiasPasswordgetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DiasPasswordgetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSendMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destiny" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="origen" type="tns:Origen" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcionRetorno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Origen">
+        <s:restriction base="s:string">
+          <s:enumeration value="NATURAL" />
+          <s:enumeration value="JURIDICO" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SaveSendMsgResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EstatusGetSoapIn">
+    <wsdl:part name="parameters" element="tns:EstatusGet" />
+  </wsdl:message>
+  <wsdl:message name="EstatusGetSoapOut">
+    <wsdl:part name="parameters" element="tns:EstatusGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Def_LovGetSoapIn">
+    <wsdl:part name="parameters" element="tns:Def_LovGet" />
+  </wsdl:message>
+  <wsdl:message name="Def_LovGetSoapOut">
+    <wsdl:part name="parameters" element="tns:Def_LovGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogRefBankAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogRefBankAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogRefBankAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogRefBankAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogRegUsAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogRegUsAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogRegUsAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogRegUsAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogTransAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogTransAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogTransAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogTransAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionGetSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionGet" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionGetSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionLogGetSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionLogGet" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionLogGetSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionLogGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionPadreGetSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionPadreGet" />
+  </wsdl:message>
+  <wsdl:message name="BDI_TipoTransaccionPadreGetSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_TipoTransaccionPadreGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogTransGetSoapIn">
+    <wsdl:part name="parameters" element="tns:LogTransGet" />
+  </wsdl:message>
+  <wsdl:message name="LogTransGetSoapOut">
+    <wsdl:part name="parameters" element="tns:LogTransGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogTransDiarioAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogTransDiarioAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogTransDiarioAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogTransDiarioAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroOperDiariasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumeroOperDiarias" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroOperDiariasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumeroOperDiariasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProveedoresGetSoapIn">
+    <wsdl:part name="parameters" element="tns:ProveedoresGet" />
+  </wsdl:message>
+  <wsdl:message name="ProveedoresGetSoapOut">
+    <wsdl:part name="parameters" element="tns:ProveedoresGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProducto" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgenciasGetSoapIn">
+    <wsdl:part name="parameters" element="tns:AgenciasGet" />
+  </wsdl:message>
+  <wsdl:message name="AgenciasGetSoapOut">
+    <wsdl:part name="parameters" element="tns:AgenciasGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgenciaGetByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:AgenciaGetById" />
+  </wsdl:message>
+  <wsdl:message name="AgenciaGetByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:AgenciaGetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposFindSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposFind" />
+  </wsdl:message>
+  <wsdl:message name="TiposFindSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:BankGetByType" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:BankGetByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BankGetSoapIn">
+    <wsdl:part name="parameters" element="tns:BankGet" />
+  </wsdl:message>
+  <wsdl:message name="BankGetSoapOut">
+    <wsdl:part name="parameters" element="tns:BankGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:BankGetById" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:BankGetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByBinSoapIn">
+    <wsdl:part name="parameters" element="tns:BankGetByBin" />
+  </wsdl:message>
+  <wsdl:message name="BankGetByBinSoapOut">
+    <wsdl:part name="parameters" element="tns:BankGetByBinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroReferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumeroReferencia" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroReferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumeroReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroReferenciaCrediCardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumeroReferenciaCrediCard" />
+  </wsdl:message>
+  <wsdl:message name="GetNumeroReferenciaCrediCardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumeroReferenciaCrediCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkBineCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkBineCard" />
+  </wsdl:message>
+  <wsdl:message name="ChkBineCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkBineCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTipoTarjetasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTipoTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="GetTipoTarjetasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTipoTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="BDI_DatosCorreoGetByDC_CodTransSoapIn">
+    <wsdl:part name="parameters" element="tns:BDI_DatosCorreoGetByDC_CodTrans" />
+  </wsdl:message>
+  <wsdl:message name="BDI_DatosCorreoGetByDC_CodTransSoapOut">
+    <wsdl:part name="parameters" element="tns:BDI_DatosCorreoGetByDC_CodTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="DiasPasswordgetSoapIn">
+    <wsdl:part name="parameters" element="tns:DiasPasswordget" />
+  </wsdl:message>
+  <wsdl:message name="DiasPasswordgetSoapOut">
+    <wsdl:part name="parameters" element="tns:DiasPasswordgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSendMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSendMsg" />
+  </wsdl:message>
+  <wsdl:message name="SaveSendMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSendMsgResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsGlobalSoap">
+    <wsdl:operation name="EstatusGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Status</wsdl:documentation>
+      <wsdl:input message="tns:EstatusGetSoapIn" />
+      <wsdl:output message="tns:EstatusGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Def_LovGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista de valores</wsdl:documentation>
+      <wsdl:input message="tns:Def_LovGetSoapIn" />
+      <wsdl:output message="tns:Def_LovGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogRefBankAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra Transaccion en el Log</wsdl:documentation>
+      <wsdl:input message="tns:LogRefBankAddSoapIn" />
+      <wsdl:output message="tns:LogRefBankAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogRegUsAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega datos al Log</wsdl:documentation>
+      <wsdl:input message="tns:LogRegUsAddSoapIn" />
+      <wsdl:output message="tns:LogRegUsAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogTransAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra Transaccion en el Log</wsdl:documentation>
+      <wsdl:input message="tns:LogTransAddSoapIn" />
+      <wsdl:output message="tns:LogTransAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza la consulta de los tipos de operacionesen el internet banking</wsdl:documentation>
+      <wsdl:input message="tns:BDI_TipoTransaccionGetSoapIn" />
+      <wsdl:output message="tns:BDI_TipoTransaccionGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionLogGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza la consulta de los tipos de operaciones en el internet banking por padre</wsdl:documentation>
+      <wsdl:input message="tns:BDI_TipoTransaccionLogGetSoapIn" />
+      <wsdl:output message="tns:BDI_TipoTransaccionLogGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionPadreGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza la consulta de los tipos de transacciones en el internet banking por padre</wsdl:documentation>
+      <wsdl:input message="tns:BDI_TipoTransaccionPadreGetSoapIn" />
+      <wsdl:output message="tns:BDI_TipoTransaccionPadreGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogTransGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza la consulta de las operaciones realizadas en el internet banking</wsdl:documentation>
+      <wsdl:input message="tns:LogTransGetSoapIn" />
+      <wsdl:output message="tns:LogTransGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogTransDiarioAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra Transaccion en el Log Diario</wsdl:documentation>
+      <wsdl:input message="tns:LogTransDiarioAddSoapIn" />
+      <wsdl:output message="tns:LogTransDiarioAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroOperDiarias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtinene la cantidad de operaciones que se ha realizado una operacion igual.</wsdl:documentation>
+      <wsdl:input message="tns:GetNumeroOperDiariasSoapIn" />
+      <wsdl:output message="tns:GetNumeroOperDiariasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProveedoresGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista de Proveedores</wsdl:documentation>
+      <wsdl:input message="tns:ProveedoresGetSoapIn" />
+      <wsdl:output message="tns:ProveedoresGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Producto</wsdl:documentation>
+      <wsdl:input message="tns:DeleteProductoSoapIn" />
+      <wsdl:output message="tns:DeleteProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgenciasGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista de Agencias</wsdl:documentation>
+      <wsdl:input message="tns:AgenciasGetSoapIn" />
+      <wsdl:output message="tns:AgenciasGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgenciaGetById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Agencia por Id</wsdl:documentation>
+      <wsdl:input message="tns:AgenciaGetByIdSoapIn" />
+      <wsdl:output message="tns:AgenciaGetByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposFind">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar un registro en [Tipos]</wsdl:documentation>
+      <wsdl:input message="tns:TiposFindSoapIn" />
+      <wsdl:output message="tns:TiposFindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista de Bancos por tipo</wsdl:documentation>
+      <wsdl:input message="tns:BankGetByTypeSoapIn" />
+      <wsdl:output message="tns:BankGetByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BankGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista de Bancos</wsdl:documentation>
+      <wsdl:input message="tns:BankGetSoapIn" />
+      <wsdl:output message="tns:BankGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BankGetById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna banco por Id</wsdl:documentation>
+      <wsdl:input message="tns:BankGetByIdSoapIn" />
+      <wsdl:output message="tns:BankGetByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByBin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Informacion del banco usando el bin de la Tarjeta de Credito</wsdl:documentation>
+      <wsdl:input message="tns:BankGetByBinSoapIn" />
+      <wsdl:output message="tns:BankGetByBinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferencia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtinene El Siguienete Numero de Referencia para transacciones Natural.</wsdl:documentation>
+      <wsdl:input message="tns:GetNumeroReferenciaSoapIn" />
+      <wsdl:output message="tns:GetNumeroReferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferenciaCrediCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtinene El Siguiente Numero de Referencia para Pagos y Avances CrediCard.</wsdl:documentation>
+      <wsdl:input message="tns:GetNumeroReferenciaCrediCardSoapIn" />
+      <wsdl:output message="tns:GetNumeroReferenciaCrediCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkBineCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Chequea Bin de la Tarjeta</wsdl:documentation>
+      <wsdl:input message="tns:ChkBineCardSoapIn" />
+      <wsdl:output message="tns:ChkBineCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoTarjetas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna Tipo de Tarjeta</wsdl:documentation>
+      <wsdl:input message="tns:GetTipoTarjetasSoapIn" />
+      <wsdl:output message="tns:GetTipoTarjetasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BDI_DatosCorreoGetByDC_CodTrans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un dataset de los correo de la transaccion</wsdl:documentation>
+      <wsdl:input message="tns:BDI_DatosCorreoGetByDC_CodTransSoapIn" />
+      <wsdl:output message="tns:BDI_DatosCorreoGetByDC_CodTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DiasPasswordget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna los días de caducidad de la clave login IB</wsdl:documentation>
+      <wsdl:input message="tns:DiasPasswordgetSoapIn" />
+      <wsdl:output message="tns:DiasPasswordgetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSendMsg">
+      <wsdl:input message="tns:SaveSendMsgSoapIn" />
+      <wsdl:output message="tns:SaveSendMsgSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsGlobalSoap" type="tns:WsGlobalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstatusGet">
+      <soap:operation soapAction="http://tempuri.org/EstatusGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Def_LovGet">
+      <soap:operation soapAction="http://tempuri.org/Def_LovGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRefBankAdd">
+      <soap:operation soapAction="http://tempuri.org/LogRefBankAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRegUsAdd">
+      <soap:operation soapAction="http://tempuri.org/LogRegUsAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransAdd">
+      <soap:operation soapAction="http://tempuri.org/LogTransAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionGet">
+      <soap:operation soapAction="http://tempuri.org/BDI_TipoTransaccionGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionLogGet">
+      <soap:operation soapAction="http://tempuri.org/BDI_TipoTransaccionLogGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionPadreGet">
+      <soap:operation soapAction="http://tempuri.org/BDI_TipoTransaccionPadreGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransGet">
+      <soap:operation soapAction="http://tempuri.org/LogTransGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransDiarioAdd">
+      <soap:operation soapAction="http://tempuri.org/LogTransDiarioAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroOperDiarias">
+      <soap:operation soapAction="http://tempuri.org/GetNumeroOperDiarias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProveedoresGet">
+      <soap:operation soapAction="http://tempuri.org/ProveedoresGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducto">
+      <soap:operation soapAction="http://tempuri.org/DeleteProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgenciasGet">
+      <soap:operation soapAction="http://tempuri.org/AgenciasGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgenciaGetById">
+      <soap:operation soapAction="http://tempuri.org/AgenciaGetById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposFind">
+      <soap:operation soapAction="http://tempuri.org/TiposFind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByType">
+      <soap:operation soapAction="http://tempuri.org/BankGetByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGet">
+      <soap:operation soapAction="http://tempuri.org/BankGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetById">
+      <soap:operation soapAction="http://tempuri.org/BankGetById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByBin">
+      <soap:operation soapAction="http://tempuri.org/BankGetByBin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferencia">
+      <soap:operation soapAction="http://tempuri.org/GetNumeroReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferenciaCrediCard">
+      <soap:operation soapAction="http://tempuri.org/GetNumeroReferenciaCrediCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkBineCard">
+      <soap:operation soapAction="http://tempuri.org/ChkBineCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoTarjetas">
+      <soap:operation soapAction="http://tempuri.org/GetTipoTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_DatosCorreoGetByDC_CodTrans">
+      <soap:operation soapAction="http://tempuri.org/BDI_DatosCorreoGetByDC_CodTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DiasPasswordget">
+      <soap:operation soapAction="http://tempuri.org/DiasPasswordget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSendMsg">
+      <soap:operation soapAction="http://tempuri.org/SaveSendMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsGlobalSoap12" type="tns:WsGlobalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstatusGet">
+      <soap12:operation soapAction="http://tempuri.org/EstatusGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Def_LovGet">
+      <soap12:operation soapAction="http://tempuri.org/Def_LovGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRefBankAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogRefBankAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogRegUsAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogRegUsAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogTransAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionGet">
+      <soap12:operation soapAction="http://tempuri.org/BDI_TipoTransaccionGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionLogGet">
+      <soap12:operation soapAction="http://tempuri.org/BDI_TipoTransaccionLogGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_TipoTransaccionPadreGet">
+      <soap12:operation soapAction="http://tempuri.org/BDI_TipoTransaccionPadreGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransGet">
+      <soap12:operation soapAction="http://tempuri.org/LogTransGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTransDiarioAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogTransDiarioAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroOperDiarias">
+      <soap12:operation soapAction="http://tempuri.org/GetNumeroOperDiarias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProveedoresGet">
+      <soap12:operation soapAction="http://tempuri.org/ProveedoresGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducto">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgenciasGet">
+      <soap12:operation soapAction="http://tempuri.org/AgenciasGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgenciaGetById">
+      <soap12:operation soapAction="http://tempuri.org/AgenciaGetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposFind">
+      <soap12:operation soapAction="http://tempuri.org/TiposFind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByType">
+      <soap12:operation soapAction="http://tempuri.org/BankGetByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGet">
+      <soap12:operation soapAction="http://tempuri.org/BankGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetById">
+      <soap12:operation soapAction="http://tempuri.org/BankGetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByBin">
+      <soap12:operation soapAction="http://tempuri.org/BankGetByBin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferencia">
+      <soap12:operation soapAction="http://tempuri.org/GetNumeroReferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumeroReferenciaCrediCard">
+      <soap12:operation soapAction="http://tempuri.org/GetNumeroReferenciaCrediCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkBineCard">
+      <soap12:operation soapAction="http://tempuri.org/ChkBineCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoTarjetas">
+      <soap12:operation soapAction="http://tempuri.org/GetTipoTarjetas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BDI_DatosCorreoGetByDC_CodTrans">
+      <soap12:operation soapAction="http://tempuri.org/BDI_DatosCorreoGetByDC_CodTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DiasPasswordget">
+      <soap12:operation soapAction="http://tempuri.org/DiasPasswordget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSendMsg">
+      <soap12:operation soapAction="http://tempuri.org/SaveSendMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsGlobal">
+    <wsdl:port name="WsGlobalSoap" binding="tns:WsGlobalSoap">
+      <soap:address location="http://172.19.52.230:8082/WsGlobal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsGlobalSoap12" binding="tns:WsGlobalSoap12">
+      <soap12:address location="http://172.19.52.230:8082/WsGlobal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

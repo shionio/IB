@@ -1,0 +1,1602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://fromIbs.respuesta.bav" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://servicio.bav" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://consulta.bav" xmlns:tns2="http://toIb.respuesta.bav" xmlns:impl="http://servicio.bav" targetNamespace="http://servicio.bav" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://consulta.bav">
+      <xsd:import namespace="http://toIb.respuesta.bav" />
+      <xsd:import namespace="http://fromIbs.respuesta.bav" />
+      <xsd:import namespace="http://servicio.bav" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Header">
+        <xsd:sequence>
+          <xsd:element name="SCedRif" nillable="true" type="xsd:string" />
+          <xsd:element name="SFiller" nillable="true" type="xsd:string" />
+          <xsd:element name="SPrefijo" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IbaConsIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SIndCons" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="StmrdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCantMov" nillable="true" type="xsd:string" />
+              <xsd:element name="SChqRefDesde" nillable="true" type="xsd:string" />
+              <xsd:element name="SChqRefHasta" nillable="true" type="xsd:string" />
+              <xsd:element name="SFechaDesde" nillable="true" type="xsd:string" />
+              <xsd:element name="SFechaHasta" nillable="true" type="xsd:string" />
+              <xsd:element name="SMontoDesde" nillable="true" type="xsd:string" />
+              <xsd:element name="SMontoHasta" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroCuenta" nillable="true" type="xsd:string" />
+              <xsd:element name="STipoConsulta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ConsuldsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="IfcedoctadsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SFecha" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="IntrfdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCedBenef" nillable="true" type="xsd:string" />
+              <xsd:element name="SCodServ" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaDest" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaOrigen" nillable="true" type="xsd:string" />
+              <xsd:element name="SInstrumento" nillable="true" type="xsd:string" />
+              <xsd:element name="SMto" nillable="true" type="xsd:string" />
+              <xsd:element name="STipOper" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="InextdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCargos" nillable="true" type="xsd:string" />
+              <xsd:element name="SCedulaBenef" nillable="true" type="xsd:string" />
+              <xsd:element name="SCedulaEmisor" nillable="true" type="xsd:string" />
+              <xsd:element name="SCodBco" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaDest" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaOrigen" nillable="true" type="xsd:string" />
+              <xsd:element name="SDetPago1" nillable="true" type="xsd:string" />
+              <xsd:element name="SDetPago2" nillable="true" type="xsd:string" />
+              <xsd:element name="SDetPago3" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoDest1" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoDest2" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoDest3" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoInter1" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoInter2" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBcoInter3" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBenef1" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecBenef2" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecEmisor1" nillable="true" type="xsd:string" />
+              <xsd:element name="SDirecEmisor2" nillable="true" type="xsd:string" />
+              <xsd:element name="SFechaValor" nillable="true" type="xsd:string" />
+              <xsd:element name="SIdentBcoInter" nillable="true" type="xsd:string" />
+              <xsd:element name="SIdentSwift" nillable="true" type="xsd:string" />
+              <xsd:element name="SMoneda" nillable="true" type="xsd:string" />
+              <xsd:element name="SMto" nillable="true" type="xsd:string" />
+              <xsd:element name="SNameBcoDest" nillable="true" type="xsd:string" />
+              <xsd:element name="SNameBcoInter" nillable="true" type="xsd:string" />
+              <xsd:element name="SNomBenef" nillable="true" type="xsd:string" />
+              <xsd:element name="SNomEmisor" nillable="true" type="xsd:string" />
+              <xsd:element name="SShortNameBcoDest" nillable="true" type="xsd:string" />
+              <xsd:element name="SSubtipo" nillable="true" type="xsd:string" />
+              <xsd:element name="SViaPago" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ChequedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DetchedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCheqIni" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+              <xsd:element name="SSerial" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BlotdddsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SMotivBloq" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ReferbdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ValusudsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCedAut" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AfiljudsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SClaveEnc" nillable="true" type="xsd:string" />
+              <xsd:element name="SFechConst" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AfilpedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCodCtaUlt" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroTjtaDbto" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ConfavdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ValfavdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCodProd" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroPrgta" nillable="true" type="xsd:string" />
+              <xsd:element name="SRespParam1" nillable="true" type="xsd:string" />
+              <xsd:element name="SRespParam2" nillable="true" type="xsd:string" />
+              <xsd:element name="SSubProd" nillable="true" type="xsd:string" />
+              <xsd:element name="STipoProd" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="IfcsuspchqdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCheqDesde" nillable="true" type="xsd:string" />
+              <xsd:element name="SCheqFrom" nillable="true" type="xsd:string" />
+              <xsd:element name="SFechaSuspen" nillable="true" type="xsd:string" />
+              <xsd:element name="SMotivoSuspen" nillable="true" type="xsd:string" />
+              <xsd:element name="SMtoCheq" nillable="true" type="xsd:string" />
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+              <xsd:element name="SSerial" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DtlotedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="codempr" nillable="true" type="xsd:string" />
+              <xsd:element name="nomarch" nillable="true" type="xsd:string" />
+              <xsd:element name="tpserv" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CnlotedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="codemp" nillable="true" type="xsd:string" />
+              <xsd:element name="fchdsd" nillable="true" type="xsd:string" />
+              <xsd:element name="fchhta" nillable="true" type="xsd:string" />
+              <xsd:element name="tposerv" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ContdcdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AvancedsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCodSeg" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaDest" nillable="true" type="xsd:string" />
+              <xsd:element name="SCtaOrgn" nillable="true" type="xsd:string" />
+              <xsd:element name="SFchVcto" nillable="true" type="xsd:string" />
+              <xsd:element name="SInstrmto" nillable="true" type="xsd:string" />
+              <xsd:element name="SMto" nillable="true" type="xsd:string" />
+              <xsd:element name="STpOper" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CmesdidsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ConempdsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ValctadsjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ConpagosjvIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:Header">
+            <xsd:sequence>
+              <xsd:element name="SCedBenef" nillable="true" type="xsd:string" />
+              <xsd:element name="SCodEmp" nillable="true" type="xsd:string" />
+              <xsd:element name="SFchDsd" nillable="true" type="xsd:string" />
+              <xsd:element name="SFecHst" nillable="true" type="xsd:string" />
+              <xsd:element name="STpoServ" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="WsfBLQdrbsIn">
+        <xsd:sequence>
+          <xsd:element name="SCuenta" nillable="true" type="xsd:string" />
+          <xsd:element name="SDayBlq" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoBlq" nillable="true" type="xsd:string" />
+          <xsd:element name="SPrefijo" nillable="true" type="xsd:string" />
+          <xsd:element name="SRznBlq" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WsfCtedrccIn">
+        <xsd:sequence>
+          <xsd:element name="SCedRif" nillable="true" type="xsd:string" />
+          <xsd:element name="SPrograma" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://toIb.respuesta.bav">
+      <xsd:import namespace="http://consulta.bav" />
+      <xsd:import namespace="http://fromIbs.respuesta.bav" />
+      <xsd:import namespace="http://servicio.bav" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="RespuestaHeader">
+        <xsd:sequence>
+          <xsd:element name="SError" nillable="true" type="xsd:string" />
+          <xsd:element name="SOperacion" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaIbaCons">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="sdjvCuentas" nillable="true" type="tns3:IbaCons" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaStmrdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="stmjvCuentas" nillable="true" type="tns3:Stmrdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaConsuldsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="consuldsjv" nillable="true" type="tns3:Consuldsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaIfcedoctadsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="ifcedoctadsjv" nillable="true" type="tns3:Ifcedoctadsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaIntrfdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="intrfdsjv" nillable="true" type="tns3:Intrfdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaInextdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="inextdsjv" nillable="true" type="tns3:Inextdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaChequedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="chequedsjv" nillable="true" type="tns3:Chequedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaDetchedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="detchedsjv" nillable="true" type="tns3:Detchedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaBlotdddsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="blotdddsjv" nillable="true" type="tns3:Blotdddsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaReferbdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="referbdsjv" nillable="true" type="tns3:Referbdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaValusudsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="valusudsjv" nillable="true" type="tns3:Valusudsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaAfiljudsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="afiljudsjv" nillable="true" type="tns3:Afiljudsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaAfilpedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="afilpedsjv" nillable="true" type="tns3:Afilpedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaConfavdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="confavdsjv" nillable="true" type="tns3:Confavdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaValfavdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="valfavdsjv" nillable="true" type="tns3:Valfavdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaIfcsuspchqdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="ifcsuspchqdsjv" nillable="true" type="tns3:Ifcsuspchqdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaDtlotedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="dtlotedsjv" nillable="true" type="tns3:Dtlotedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaCnlotedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="cnlotedsjv" nillable="true" type="tns3:Cnlotedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaContdcdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="contdcdsjv" nillable="true" type="tns3:Contdcdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaAvancedsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="avancedsjv" nillable="true" type="tns3:Avancedsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaCmesdidsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="cmesdidsjv" nillable="true" type="tns3:Cmesdidsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaConempdsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="consulCodEmpresadsjv" nillable="true" type="tns3:Conempdsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaValctadsjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="validarctabavdsjv" nillable="true" type="tns3:Valctadsjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaConpagosjv">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="conPagosjv" nillable="true" type="tns3:Conpagosjv" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaWsfBLQdrbs">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="wsfBLQdrbs" nillable="true" type="tns3:WsfBLQdrbs" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RespuestaWsfCtedrcc">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:RespuestaHeader">
+            <xsd:sequence>
+              <xsd:element name="wsfCte" nillable="true" type="tns3:WsfCtedrcc" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fromIbs.respuesta.bav">
+      <xsd:import namespace="http://toIb.respuesta.bav" />
+      <xsd:import namespace="http://consulta.bav" />
+      <xsd:import namespace="http://servicio.bav" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Errores">
+        <xsd:sequence>
+          <xsd:element name="SVectorCod" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IbaConsDet">
+        <xsd:sequence>
+          <xsd:element name="SBloqueado" nillable="true" type="xsd:string" />
+          <xsd:element name="SClasecuenta" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SContable" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescipcionproducto" nillable="true" type="xsd:string" />
+          <xsd:element name="SDiferido" nillable="true" type="xsd:string" />
+          <xsd:element name="SDisponible" nillable="true" type="xsd:string" />
+          <xsd:element name="SIndicadorDeb" nillable="true" type="xsd:string" />
+          <xsd:element name="SNickName" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCuenta" nillable="true" type="xsd:string" />
+          <xsd:element name="STipoFirma" nillable="true" type="xsd:string" />
+          <xsd:element name="STipocuenta" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IbaCons">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="sdsjvDetalle" nillable="true" type="impl:ArrayOf_tns3_IbaConsDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="StmrdsjvDet">
+        <xsd:sequence>
+          <xsd:element name="SBalanceFin" nillable="true" type="xsd:string" />
+          <xsd:element name="SBalanceIni" nillable="true" type="xsd:string" />
+          <xsd:element name="SChqRef" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodAdicional" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodTrans" nillable="true" type="xsd:string" />
+          <xsd:element name="SConsecutivo" nillable="true" type="xsd:string" />
+          <xsd:element name="SCorrelativo" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion1" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion2" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion3" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion4" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion5" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion6" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion7" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion8" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion9" nillable="true" type="xsd:string" />
+          <xsd:element name="SDesctrans" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaEfect" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProc" nillable="true" type="xsd:string" />
+          <xsd:element name="SIndDebCre" nillable="true" type="xsd:string" />
+          <xsd:element name="SMonto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNemonico" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Stmrdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SBloqueo" nillable="true" type="xsd:string" />
+          <xsd:element name="SCiudad" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodPostal" nillable="true" type="xsd:string" />
+          <xsd:element name="SContable" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescTipoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SDiferido" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion1" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion2" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion3" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion4" nillable="true" type="xsd:string" />
+          <xsd:element name="SDisponible" nillable="true" type="xsd:string" />
+          <xsd:element name="SEjecutivoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SEmail" nillable="true" type="xsd:string" />
+          <xsd:element name="SEstado" nillable="true" type="xsd:string" />
+          <xsd:element name="SFax" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaEdoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProxPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaUltPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SIntSobgiro" nillable="true" type="xsd:string" />
+          <xsd:element name="SInteres" nillable="true" type="xsd:string" />
+          <xsd:element name="SMontoLinea" nillable="true" type="xsd:string" />
+          <xsd:element name="SNeto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreProdcto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SPais" nillable="true" type="xsd:string" />
+          <xsd:element name="SPoBox" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerCtable" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="SZipCode" nillable="true" type="xsd:string" />
+          <xsd:element name="smtDetalle" nillable="true" type="impl:ArrayOf_tns3_StmrdsjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Consuldsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SBloqueo" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SContable" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescTipCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SDiferido" nillable="true" type="xsd:string" />
+          <xsd:element name="SDisponible" nillable="true" type="xsd:string" />
+          <xsd:element name="SEjecutivoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProxPago" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaUltPago" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaVctoCredito" nillable="true" type="xsd:string" />
+          <xsd:element name="SIntSobregiro" nillable="true" type="xsd:string" />
+          <xsd:element name="SInteres" nillable="true" type="xsd:string" />
+          <xsd:element name="SLineaDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoCuota" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoLinea" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoOriginal" nillable="true" type="xsd:string" />
+          <xsd:element name="SNeto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreProd" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoActual" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerCont" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="STasa" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IfcedoctadsjvDet">
+        <xsd:sequence>
+          <xsd:element name="SBalanceFin" nillable="true" type="xsd:string" />
+          <xsd:element name="SBalanceIni" nillable="true" type="xsd:string" />
+          <xsd:element name="SChqRef" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodAdicional" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodTrans" nillable="true" type="xsd:string" />
+          <xsd:element name="SConsecutivo" nillable="true" type="xsd:string" />
+          <xsd:element name="SCorrelativo" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion1" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion2" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion3" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion4" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion5" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion6" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion7" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion8" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescripcion9" nillable="true" type="xsd:string" />
+          <xsd:element name="SDesctrans" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProc" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaValor" nillable="true" type="xsd:string" />
+          <xsd:element name="SIndDebCre" nillable="true" type="xsd:string" />
+          <xsd:element name="SMonto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNemonico" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Ifcedoctadsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SBloqueo" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantCheqpagados" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantDepoEfec" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantITF" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantIntereses" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantOtrosCredCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SCantOtrosDebCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SCheqpagados" nillable="true" type="xsd:string" />
+          <xsd:element name="SCiudad" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodPostal" nillable="true" type="xsd:string" />
+          <xsd:element name="SContable" nillable="true" type="xsd:string" />
+          <xsd:element name="SDepoEfec" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescTipoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SDiferido" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion1" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion2" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion3" nillable="true" type="xsd:string" />
+          <xsd:element name="SDireccion4" nillable="true" type="xsd:string" />
+          <xsd:element name="SDisponible" nillable="true" type="xsd:string" />
+          <xsd:element name="SEjecutivoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SEmail" nillable="true" type="xsd:string" />
+          <xsd:element name="SEstado" nillable="true" type="xsd:string" />
+          <xsd:element name="SFax" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaDesde" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaEdoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaHasta" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProxPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaUltPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SITF" nillable="true" type="xsd:string" />
+          <xsd:element name="SIntSobgiro" nillable="true" type="xsd:string" />
+          <xsd:element name="SInteres" nillable="true" type="xsd:string" />
+          <xsd:element name="SLimitSgiro" nillable="true" type="xsd:string" />
+          <xsd:element name="SMontoLinea" nillable="true" type="xsd:string" />
+          <xsd:element name="SNeto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreProdcto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SOtrosCredCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SOtrosDebCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SPais" nillable="true" type="xsd:string" />
+          <xsd:element name="SPoBox" nillable="true" type="xsd:string" />
+          <xsd:element name="SRifCed" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerCtable" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoAyerDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoFinMes" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoGirable" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoIniMes" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="SZipCode" nillable="true" type="xsd:string" />
+          <xsd:element name="ifcedoctadsjvDet" nillable="true" type="impl:ArrayOf_tns3_IfcedoctadsjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Intrfdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCodAutoriza" nillable="true" type="xsd:string" />
+          <xsd:element name="SDesc" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SHoraTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SReferencia" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Inextdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCodAutoriza" nillable="true" type="xsd:string" />
+          <xsd:element name="SDesc" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SHoraTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SReferencia" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ChequedsjvDet">
+        <xsd:sequence>
+          <xsd:element name="SCantCheq" nillable="true" type="xsd:string" />
+          <xsd:element name="SCheqFin" nillable="true" type="xsd:string" />
+          <xsd:element name="SCheqIni" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescTipCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreProd" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SNumCheqHabil" nillable="true" type="xsd:string" />
+          <xsd:element name="SSerial" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Chequedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="chequedsDet" nillable="true" type="impl:ArrayOf_tns3_ChequedsjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Detchedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCheqFin" nillable="true" type="xsd:string" />
+          <xsd:element name="SCheqIni" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodMoneda" nillable="true" type="xsd:string" />
+          <xsd:element name="SDescTpoCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreProd" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SSerial" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="SVectorStatus" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Blotdddsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Referbdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SBase" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaInicio" nillable="true" type="xsd:string" />
+          <xsd:element name="SLiteral" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="STitular" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Valusudsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SNombreAut" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Afiljudsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCodCteAdm" nillable="true" type="xsd:string" />
+          <xsd:element name="SIdCteAdm" nillable="true" type="xsd:string" />
+          <xsd:element name="SNomCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SNomCteAdm" nillable="true" type="xsd:string" />
+          <xsd:element name="SOfcCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Afilpedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCelCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SNomCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SOfcCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Confavdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="VPregRgo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Valfavdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Ifcsuspchqdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCheqDesde" nillable="true" type="xsd:string" />
+          <xsd:element name="SCheqFrom" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaSuspen" nillable="true" type="xsd:string" />
+          <xsd:element name="SMotivoSuspen" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoCheq" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SSerial" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DtlotedsjvDet">
+        <xsd:sequence>
+          <xsd:element name="SCedrifben" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodbanco" nillable="true" type="xsd:string" />
+          <xsd:element name="SCoderror" nillable="true" type="xsd:string" />
+          <xsd:element name="SCuentaben" nillable="true" type="xsd:string" />
+          <xsd:element name="SMontotrans" nillable="true" type="xsd:string" />
+          <xsd:element name="SNombreben" nillable="true" type="xsd:string" />
+          <xsd:element name="SNrOrdenpgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SSecDet" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Dtlotedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="dtlotedsjvDet" nillable="true" type="impl:ArrayOf_tns3_DtlotedsjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CnlotedsjvDet">
+        <xsd:sequence>
+          <xsd:element name="cantrechzs" nillable="true" type="xsd:string" />
+          <xsd:element name="cantregtot" nillable="true" type="xsd:string" />
+          <xsd:element name="ctadeb" nillable="true" type="xsd:string" />
+          <xsd:element name="esdoarch" nillable="true" type="xsd:string" />
+          <xsd:element name="fchval" nillable="true" type="xsd:string" />
+          <xsd:element name="montolote" nillable="true" type="xsd:string" />
+          <xsd:element name="nomarch" nillable="true" type="xsd:string" />
+          <xsd:element name="userid" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Cnlotedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="cnlotedsjvDet" nillable="true" type="impl:ArrayOf_tns3_CnlotedsjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Contdcdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCuotaMes" nillable="true" type="xsd:string" />
+          <xsd:element name="SCupIntDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SCupViajDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaProxPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaUltPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SImportesVenc" nillable="true" type="xsd:string" />
+          <xsd:element name="SLimiteCred" nillable="true" type="xsd:string" />
+          <xsd:element name="SMtoUltPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoActual" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoCorte" nillable="true" type="xsd:string" />
+          <xsd:element name="SSaldoDisp" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Avancedsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCodAutoriza" nillable="true" type="xsd:string" />
+          <xsd:element name="SDesc" nillable="true" type="xsd:string" />
+          <xsd:element name="SFechaTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SHoraTran" nillable="true" type="xsd:string" />
+          <xsd:element name="SReferencia" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Cmesdidsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SNroCta" nillable="true" type="xsd:string" />
+          <xsd:element name="SUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="SVecMesDip" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Conempdsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="codEmpre" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Valctadsjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="cedRif" nillable="true" type="xsd:string" />
+          <xsd:element name="nomTit" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConpagosjvDet">
+        <xsd:sequence>
+          <xsd:element name="SDescError" nillable="true" type="xsd:string" />
+          <xsd:element name="SFchVlor" nillable="true" type="xsd:string" />
+          <xsd:element name="SMonto" nillable="true" type="xsd:string" />
+          <xsd:element name="SNomBco" nillable="true" type="xsd:string" />
+          <xsd:element name="SNumOrdPgo" nillable="true" type="xsd:string" />
+          <xsd:element name="SRef" nillable="true" type="xsd:string" />
+          <xsd:element name="SStatus" nillable="true" type="xsd:string" />
+          <xsd:element name="sctadest" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Conpagosjv">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="conpagoDet" nillable="true" type="impl:ArrayOf_tns3_ConpagosjvDet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WsfBLQdrbs">
+        <xsd:sequence>
+          <xsd:element name="EErrores" nillable="true" type="tns3:Errores" />
+          <xsd:element name="SCodBlq" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WsfCtedrcc">
+        <xsd:sequence>
+          <xsd:element name="SCiudad" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodCte" nillable="true" type="xsd:string" />
+          <xsd:element name="SCodEmp" nillable="true" type="xsd:string" />
+          <xsd:element name="SDreccion" nillable="true" type="xsd:string" />
+          <xsd:element name="SEdoCivil" nillable="true" type="xsd:string" />
+          <xsd:element name="SErrDesc" nillable="true" type="xsd:string" />
+          <xsd:element name="SError" nillable="true" type="xsd:string" />
+          <xsd:element name="SEstado" nillable="true" type="xsd:string" />
+          <xsd:element name="SFax" nillable="true" type="xsd:string" />
+          <xsd:element name="SFchNacmiento" nillable="true" type="xsd:string" />
+          <xsd:element name="SIsEmpleado" nillable="true" type="xsd:string" />
+          <xsd:element name="SLgarNac" nillable="true" type="xsd:string" />
+          <xsd:element name="SMail" nillable="true" type="xsd:string" />
+          <xsd:element name="SOficina" nillable="true" type="xsd:string" />
+          <xsd:element name="SPimerApllido" nillable="true" type="xsd:string" />
+          <xsd:element name="SPrimerNombre" nillable="true" type="xsd:string" />
+          <xsd:element name="SProfesion" nillable="true" type="xsd:string" />
+          <xsd:element name="SSexo" nillable="true" type="xsd:string" />
+          <xsd:element name="SSgndoApllido" nillable="true" type="xsd:string" />
+          <xsd:element name="STlefono1" nillable="true" type="xsd:string" />
+          <xsd:element name="STlefono2" nillable="true" type="xsd:string" />
+          <xsd:element name="SZonaPostal" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://servicio.bav">
+      <xsd:import namespace="http://toIb.respuesta.bav" />
+      <xsd:import namespace="http://consulta.bav" />
+      <xsd:import namespace="http://fromIbs.respuesta.bav" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns3_IbaConsDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:IbaConsDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_StmrdsjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:StmrdsjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_IfcedoctadsjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:IfcedoctadsjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_ChequedsjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:ChequedsjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_DtlotedsjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:DtlotedsjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_CnlotedsjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:CnlotedsjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_ConpagosjvDet">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:ConpagosjvDet[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ibaConsultarDetallePagoRequest">
+    <wsdl:part name="rafaga" type="tns1:ConpagosjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaFavoritoPregResponse">
+    <wsdl:part name="ibaFavoritoPregReturn" type="tns2:RespuestaConfavdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaDetalleChqResponse">
+    <wsdl:part name="ibaDetalleChqReturn" type="tns2:RespuestaDetchedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaSaldosRequest">
+    <wsdl:part name="rafaga" type="tns1:ConsuldsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConSaldoTdcRequest">
+    <wsdl:part name="rafaga" type="tns1:ContdcdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConMesDispResponse">
+    <wsdl:part name="ibaConMesDispReturn" type="tns2:RespuestaCmesdidsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaFavoritoPregRequest">
+    <wsdl:part name="rafaga" type="tns1:ConfavdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsLteArchRechzRequest">
+    <wsdl:part name="rafaga" type="tns1:DtlotedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaAvanceEfectivoRequest">
+    <wsdl:part name="rafaga" type="tns1:AvancedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaBloqueoFondosRequest">
+    <wsdl:part name="rafaga" type="tns1:WsfBLQdrbsIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaFavoritoRespRequest">
+    <wsdl:part name="rafaga" type="tns1:ValfavdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaValCtaBavResponse">
+    <wsdl:part name="ibaValCtaBavReturn" type="tns2:RespuestaValctadsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaMovmientosRequest">
+    <wsdl:part name="rafaga" type="tns1:StmrdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaChqRequest">
+    <wsdl:part name="rafaga" type="tns1:ChequedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaBloqueoFondosResponse">
+    <wsdl:part name="ibaBloqueoFondosReturn" type="tns2:RespuestaWsfBLQdrbs" />
+  </wsdl:message>
+  <wsdl:message name="ibaSuspCheqrsRequest">
+    <wsdl:part name="rafaga" type="tns1:IfcsuspchqdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaClienteResponse">
+    <wsdl:part name="ibaConsultaClienteReturn" type="tns2:RespuestaWsfCtedrcc" />
+  </wsdl:message>
+  <wsdl:message name="ibaEstadoCtaRequest">
+    <wsdl:part name="rafaga" type="tns1:IfcedoctadsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaReferenBcriaRequest">
+    <wsdl:part name="rafaga" type="tns1:ReferbdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaClienteRequest">
+    <wsdl:part name="rafaga" type="tns1:WsfCtedrccIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaAvanceEfectivoResponse">
+    <wsdl:part name="ibaAvanceEfectivoReturn" type="tns2:RespuestaAvancedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaBloqueoTdResponse">
+    <wsdl:part name="ibaBloqueoTdReturn" type="tns2:RespuestaBlotdddsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsLteArchResponse">
+    <wsdl:part name="ibaConsLteArchReturn" type="tns2:RespuestaCnlotedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsCodEmpRequest">
+    <wsdl:part name="rafaga" type="tns1:ConempdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaTransfPgoBavRequest">
+    <wsdl:part name="rafaga" type="tns1:IntrfdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaReferenBcriaResponse">
+    <wsdl:part name="ibaReferenBcriaReturn" type="tns2:RespuestaReferbdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsLteArchRequest">
+    <wsdl:part name="rafaga" type="tns1:CnlotedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaTransfPgoOtrosRequest">
+    <wsdl:part name="rafaga" type="tns1:InextdsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaAfiliarNaturalRequest">
+    <wsdl:part name="rafaga" type="tns1:AfilpedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsolidaCtasResponse">
+    <wsdl:part name="ibaConsolidaCtasReturn" type="tns2:RespuestaIbaCons" />
+  </wsdl:message>
+  <wsdl:message name="ibaAfiliarJuridicoResponse">
+    <wsdl:part name="ibaAfiliarJuridicoReturn" type="tns2:RespuestaAfiljudsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaAfiliarNaturalResponse">
+    <wsdl:part name="ibaAfiliarNaturalReturn" type="tns2:RespuestaAfilpedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaDetalleChqRequest">
+    <wsdl:part name="rafaga" type="tns1:DetchedsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConMesDispRequest">
+    <wsdl:part name="rafaga" type="tns1:CmesdidsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsLteArchRechzResponse">
+    <wsdl:part name="ibaConsLteArchRechzReturn" type="tns2:RespuestaDtlotedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaValidarUsrJdcoResponse">
+    <wsdl:part name="ibaValidarUsrJdcoReturn" type="tns2:RespuestaValusudsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaValCtaBavRequest">
+    <wsdl:part name="rafaga" type="tns1:ValctadsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaAfiliarJuridicoRequest">
+    <wsdl:part name="rafaga" type="tns1:AfiljudsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaFavoritoRespResponse">
+    <wsdl:part name="ibaFavoritoRespReturn" type="tns2:RespuestaValfavdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaBloqueoTdRequest">
+    <wsdl:part name="rafaga" type="tns1:BlotdddsjvIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsCodEmpResponse">
+    <wsdl:part name="ibaConsCodEmpReturn" type="tns2:RespuestaConempdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaMovmientosResponse">
+    <wsdl:part name="ibaConsultaMovmientosReturn" type="tns2:RespuestaStmrdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaEstadoCtaResponse">
+    <wsdl:part name="ibaEstadoCtaReturn" type="tns2:RespuestaIfcedoctadsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaSuspCheqrsResponse">
+    <wsdl:part name="ibaSuspCheqrsReturn" type="tns2:RespuestaIfcsuspchqdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultarDetallePagoResponse">
+    <wsdl:part name="ibaConsultarDetallePagoReturn" type="tns2:RespuestaConpagosjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConSaldoTdcResponse">
+    <wsdl:part name="ibaConSaldoTdcReturn" type="tns2:RespuestaContdcdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsolidaCtasRequest">
+    <wsdl:part name="rafaga" type="tns1:IbaConsIn" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaSaldosResponse">
+    <wsdl:part name="ibaConsultaSaldosReturn" type="tns2:RespuestaConsuldsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaConsultaChqResponse">
+    <wsdl:part name="ibaConsultaChqReturn" type="tns2:RespuestaChequedsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaTransfPgoBavResponse">
+    <wsdl:part name="ibaTransfPgoBavReturn" type="tns2:RespuestaIntrfdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaTransfPgoOtrosResponse">
+    <wsdl:part name="ibaTransfPgoOtrosReturn" type="tns2:RespuestaInextdsjv" />
+  </wsdl:message>
+  <wsdl:message name="ibaValidarUsrJdcoRequest">
+    <wsdl:part name="rafaga" type="tns1:ValusudsjvIn" />
+  </wsdl:message>
+  <wsdl:portType name="IbsService">
+    <wsdl:operation name="ibaConsolidaCtas" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsolidaCtasRequest" message="impl:ibaConsolidaCtasRequest" />
+      <wsdl:output name="ibaConsolidaCtasResponse" message="impl:ibaConsolidaCtasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaMovmientos" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsultaMovmientosRequest" message="impl:ibaConsultaMovmientosRequest" />
+      <wsdl:output name="ibaConsultaMovmientosResponse" message="impl:ibaConsultaMovmientosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaSaldos" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsultaSaldosRequest" message="impl:ibaConsultaSaldosRequest" />
+      <wsdl:output name="ibaConsultaSaldosResponse" message="impl:ibaConsultaSaldosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaEstadoCta" parameterOrder="rafaga">
+      <wsdl:input name="ibaEstadoCtaRequest" message="impl:ibaEstadoCtaRequest" />
+      <wsdl:output name="ibaEstadoCtaResponse" message="impl:ibaEstadoCtaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaTransfPgoBav" parameterOrder="rafaga">
+      <wsdl:input name="ibaTransfPgoBavRequest" message="impl:ibaTransfPgoBavRequest" />
+      <wsdl:output name="ibaTransfPgoBavResponse" message="impl:ibaTransfPgoBavResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaTransfPgoOtros" parameterOrder="rafaga">
+      <wsdl:input name="ibaTransfPgoOtrosRequest" message="impl:ibaTransfPgoOtrosRequest" />
+      <wsdl:output name="ibaTransfPgoOtrosResponse" message="impl:ibaTransfPgoOtrosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaChq" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsultaChqRequest" message="impl:ibaConsultaChqRequest" />
+      <wsdl:output name="ibaConsultaChqResponse" message="impl:ibaConsultaChqResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaDetalleChq" parameterOrder="rafaga">
+      <wsdl:input name="ibaDetalleChqRequest" message="impl:ibaDetalleChqRequest" />
+      <wsdl:output name="ibaDetalleChqResponse" message="impl:ibaDetalleChqResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaBloqueoTd" parameterOrder="rafaga">
+      <wsdl:input name="ibaBloqueoTdRequest" message="impl:ibaBloqueoTdRequest" />
+      <wsdl:output name="ibaBloqueoTdResponse" message="impl:ibaBloqueoTdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaReferenBcria" parameterOrder="rafaga">
+      <wsdl:input name="ibaReferenBcriaRequest" message="impl:ibaReferenBcriaRequest" />
+      <wsdl:output name="ibaReferenBcriaResponse" message="impl:ibaReferenBcriaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaValidarUsrJdco" parameterOrder="rafaga">
+      <wsdl:input name="ibaValidarUsrJdcoRequest" message="impl:ibaValidarUsrJdcoRequest" />
+      <wsdl:output name="ibaValidarUsrJdcoResponse" message="impl:ibaValidarUsrJdcoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaAfiliarJuridico" parameterOrder="rafaga">
+      <wsdl:input name="ibaAfiliarJuridicoRequest" message="impl:ibaAfiliarJuridicoRequest" />
+      <wsdl:output name="ibaAfiliarJuridicoResponse" message="impl:ibaAfiliarJuridicoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaAfiliarNatural" parameterOrder="rafaga">
+      <wsdl:input name="ibaAfiliarNaturalRequest" message="impl:ibaAfiliarNaturalRequest" />
+      <wsdl:output name="ibaAfiliarNaturalResponse" message="impl:ibaAfiliarNaturalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaFavoritoPreg" parameterOrder="rafaga">
+      <wsdl:input name="ibaFavoritoPregRequest" message="impl:ibaFavoritoPregRequest" />
+      <wsdl:output name="ibaFavoritoPregResponse" message="impl:ibaFavoritoPregResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaFavoritoResp" parameterOrder="rafaga">
+      <wsdl:input name="ibaFavoritoRespRequest" message="impl:ibaFavoritoRespRequest" />
+      <wsdl:output name="ibaFavoritoRespResponse" message="impl:ibaFavoritoRespResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaSuspCheqrs" parameterOrder="rafaga">
+      <wsdl:input name="ibaSuspCheqrsRequest" message="impl:ibaSuspCheqrsRequest" />
+      <wsdl:output name="ibaSuspCheqrsResponse" message="impl:ibaSuspCheqrsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsLteArchRechz" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsLteArchRechzRequest" message="impl:ibaConsLteArchRechzRequest" />
+      <wsdl:output name="ibaConsLteArchRechzResponse" message="impl:ibaConsLteArchRechzResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsLteArch" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsLteArchRequest" message="impl:ibaConsLteArchRequest" />
+      <wsdl:output name="ibaConsLteArchResponse" message="impl:ibaConsLteArchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConSaldoTdc" parameterOrder="rafaga">
+      <wsdl:input name="ibaConSaldoTdcRequest" message="impl:ibaConSaldoTdcRequest" />
+      <wsdl:output name="ibaConSaldoTdcResponse" message="impl:ibaConSaldoTdcResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaAvanceEfectivo" parameterOrder="rafaga">
+      <wsdl:input name="ibaAvanceEfectivoRequest" message="impl:ibaAvanceEfectivoRequest" />
+      <wsdl:output name="ibaAvanceEfectivoResponse" message="impl:ibaAvanceEfectivoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConMesDisp" parameterOrder="rafaga">
+      <wsdl:input name="ibaConMesDispRequest" message="impl:ibaConMesDispRequest" />
+      <wsdl:output name="ibaConMesDispResponse" message="impl:ibaConMesDispResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsCodEmp" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsCodEmpRequest" message="impl:ibaConsCodEmpRequest" />
+      <wsdl:output name="ibaConsCodEmpResponse" message="impl:ibaConsCodEmpResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaValCtaBav" parameterOrder="rafaga">
+      <wsdl:input name="ibaValCtaBavRequest" message="impl:ibaValCtaBavRequest" />
+      <wsdl:output name="ibaValCtaBavResponse" message="impl:ibaValCtaBavResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultarDetallePago" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsultarDetallePagoRequest" message="impl:ibaConsultarDetallePagoRequest" />
+      <wsdl:output name="ibaConsultarDetallePagoResponse" message="impl:ibaConsultarDetallePagoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaBloqueoFondos" parameterOrder="rafaga">
+      <wsdl:input name="ibaBloqueoFondosRequest" message="impl:ibaBloqueoFondosRequest" />
+      <wsdl:output name="ibaBloqueoFondosResponse" message="impl:ibaBloqueoFondosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaCliente" parameterOrder="rafaga">
+      <wsdl:input name="ibaConsultaClienteRequest" message="impl:ibaConsultaClienteRequest" />
+      <wsdl:output name="ibaConsultaClienteResponse" message="impl:ibaConsultaClienteResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IbsServiceSoapBinding" type="impl:IbsService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="ibaConsolidaCtas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsolidaCtasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsolidaCtasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaMovmientos">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsultaMovmientosRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsultaMovmientosResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaSaldos">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsultaSaldosRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsultaSaldosResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaEstadoCta">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaEstadoCtaRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaEstadoCtaResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaTransfPgoBav">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaTransfPgoBavRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaTransfPgoBavResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaTransfPgoOtros">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaTransfPgoOtrosRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaTransfPgoOtrosResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaChq">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsultaChqRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsultaChqResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaDetalleChq">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaDetalleChqRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaDetalleChqResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaBloqueoTd">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaBloqueoTdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaBloqueoTdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaReferenBcria">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaReferenBcriaRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaReferenBcriaResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaValidarUsrJdco">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaValidarUsrJdcoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaValidarUsrJdcoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaAfiliarJuridico">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaAfiliarJuridicoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaAfiliarJuridicoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaAfiliarNatural">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaAfiliarNaturalRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaAfiliarNaturalResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaFavoritoPreg">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaFavoritoPregRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaFavoritoPregResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaFavoritoResp">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaFavoritoRespRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaFavoritoRespResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaSuspCheqrs">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaSuspCheqrsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaSuspCheqrsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsLteArchRechz">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsLteArchRechzRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsLteArchRechzResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsLteArch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsLteArchRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsLteArchResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConSaldoTdc">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConSaldoTdcRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConSaldoTdcResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaAvanceEfectivo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaAvanceEfectivoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaAvanceEfectivoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConMesDisp">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConMesDispRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConMesDispResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsCodEmp">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsCodEmpRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsCodEmpResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaValCtaBav">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaValCtaBavRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaValCtaBavResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultarDetallePago">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsultarDetallePagoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsultarDetallePagoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaBloqueoFondos">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaBloqueoFondosRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaBloqueoFondosResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ibaConsultaCliente">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ibaConsultaClienteRequest">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="ibaConsultaClienteResponse">
+        <wsdlsoap:body use="encoded" namespace="http://servicio.bav" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IbsServiceService">
+    <wsdl:port name="IbsService" binding="impl:IbsServiceSoapBinding">
+      <wsdlsoap:address location="http://172.19.52.230:8080/bavWebSrvIbs/services/IbsService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
